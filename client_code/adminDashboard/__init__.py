@@ -13,5 +13,18 @@ class adminDashboard(adminDashboardTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.strategy1_card.visible = False
 
     # Any code you write here will run before the form opens.
+
+  def strategyTab1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.strategy1_card.visible = True
+
+  def strategyTab2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.strategy1_card.visible = False
+
+  def strategyTab3_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.strategy1_card.visible = False
