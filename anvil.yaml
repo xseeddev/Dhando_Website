@@ -1,0 +1,61 @@
+allow_embedding: false
+package_name: Dashboard_Template_A
+db_schema:
+  users:
+    client: none
+    server: full
+    columns:
+    - name: email
+      type: string
+      admin_ui: {order: 0, width: 200}
+    - name: enabled
+      type: bool
+      admin_ui: {order: 1, width: 200}
+    - name: last_login
+      type: datetime
+      admin_ui: {order: 2, width: 200}
+    - name: password_hash
+      type: string
+      admin_ui: {order: 3, width: 200}
+    - name: n_password_failures
+      type: number
+      admin_ui: {order: 4, width: 200}
+    - name: confirmed_email
+      type: bool
+      admin_ui: {order: 5, width: 200}
+    - name: signed_up
+      type: datetime
+      admin_ui: {order: 6, width: 200}
+    - name: name
+      admin_ui: {order: 7, width: 200}
+      type: string
+    title: Users
+  files:
+    client: none
+    server: full
+    columns:
+    - name: filename
+      admin_ui: {order: 0, width: 200}
+      type: string
+    - name: author
+      admin_ui: {order: 2, width: 200}
+      type: link_single
+      target: users
+    - name: created
+      admin_ui: {order: 3, width: 200}
+      type: datetime
+    title: Files
+startup: {type: form, module: Frame}
+name: Dashboard Template A
+startup_form: null
+native_deps: {head_html: '<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet" rel="preload" as="font" crossorigin="anonymous">'}
+correct_dependency_ids: {}
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox, server_spec: null, preview_v3: true}
+dependencies: []
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/anvil/users.yml
+  client_config: {allow_signup: true, enable_automatically: true, use_email: true, confirm_email: false, use_google: false}
+  server_config: {user_table: users}

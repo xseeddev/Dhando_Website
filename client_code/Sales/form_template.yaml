@@ -1,0 +1,165 @@
+container: {type: ColumnPanel}
+components:
+- type: ColumnPanel
+  properties: {role: null, col_widths: '{"XJDGPO":30,"QWVFNP":30}', spacing_above: none, background: '', wrap_on: mobile, col_spacing: medium, foreground: '', spacing_below: none, visible: true, border: '', tooltip: ''}
+  name: column_panel_1
+  layout_properties:
+    col_widths: {}
+    grid_position: ODOKZJ,JPHMQN
+  components:
+  - type: ColumnPanel
+    properties: {role: card, col_widths: '{"DZNMMD":20,"CIEZQP":40}'}
+    name: card_1
+    layout_properties: {grid_position: 'RICELT,OEMWEL'}
+    components:
+    - type: Label
+      properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: 'fa:line-chart', underline: false, font: '', icon_align: left, foreground: 'theme:Primary', spacing_below: small, visible: true, border: '', italic: false, font_size: 50, tooltip: '', text: ''}
+      name: label_12
+      layout_properties: {grid_position: 'SPXODK,DZNMMD'}
+    - type: Label
+      properties: {role: body, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: VALUE}
+      name: label_1
+      layout_properties: {grid_position: 'SPXODK,CIEZQP OBHDPA,LXIAIC'}
+    - type: Label
+      properties: {role: headline, bold: false, align: left, spacing_above: none, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: '$500,000'}
+      name: label_5
+      layout_properties: {grid_position: 'SPXODK,CIEZQP JVVXKJ,FTWMOM'}
+  - type: ColumnPanel
+    properties: {role: card, col_widths: '{"JKJDQA":20,"RWDROK":40}'}
+    name: card_3
+    layout_properties: {grid_position: 'RICELT,TNAJPS'}
+    components:
+    - type: Label
+      properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: 'fa:money', underline: false, font: '', icon_align: left, foreground: 'theme:Primary', spacing_below: small, visible: true, border: '', italic: false, font_size: 50, tooltip: '', text: ''}
+      name: label_10
+      layout_properties: {grid_position: 'PGTFGN,JKJDQA'}
+    - type: Label
+      properties: {role: body, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: SALES}
+      name: label_3
+      layout_properties: {grid_position: 'PGTFGN,RWDROK MSOHDH,KMEFSK'}
+    - type: Label
+      properties: {role: headline, bold: false, align: left, spacing_above: none, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: '$104,000'}
+      name: label_7
+      layout_properties: {grid_position: 'PGTFGN,RWDROK WZCEHY,EIALHQ'}
+  - type: ColumnPanel
+    properties: {role: card, col_widths: '{"PEJLQU":20,"PMLAHK":40}'}
+    name: card_2
+    layout_properties: {grid_position: 'RICELT,CGCSYJ'}
+    components:
+    - type: Label
+      properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: 'fa:users', underline: false, font: '', icon_align: left, foreground: 'theme:Primary', spacing_below: small, visible: true, border: '', italic: false, font_size: 50, tooltip: '', text: ''}
+      name: label_11
+      layout_properties: {grid_position: 'CWAHBW,PEJLQU'}
+    - type: Label
+      properties: {role: body, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: NEW CLIENTS}
+      name: label_2
+      layout_properties: {grid_position: 'CWAHBW,PMLAHK YNPGEU,LHVYOS'}
+    - type: Label
+      properties: {role: headline, bold: false, align: left, spacing_above: none, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: '812'}
+      name: label_6
+      layout_properties: {grid_position: 'CWAHBW,PMLAHK XEWCHO,AWRSEV'}
+  - type: ColumnPanel
+    properties: {role: card, col_widths: '{"GHKWWK":20,"VBOZUY":40}'}
+    name: card_4
+    layout_properties: {grid_position: 'RICELT,FZREAD'}
+    components:
+    - type: Label
+      properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: 'fa:pie-chart', underline: false, font: '', icon_align: left, foreground: 'theme:Primary', spacing_below: small, visible: true, border: '', italic: false, font_size: 50, tooltip: '', text: ''}
+      name: label_9
+      layout_properties: {grid_position: 'EMOITM,GHKWWK'}
+    - type: Label
+      properties: {role: body, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: TARGET RATIO}
+      name: label_4
+      layout_properties: {grid_position: 'EMOITM,VBOZUY XMMHJR,FHNILM'}
+    - type: Label
+      properties: {role: headline, bold: false, align: left, spacing_above: none, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: 90%}
+      name: label_8
+      layout_properties: {grid_position: 'EMOITM,VBOZUY VGJFGK,RKGDCB'}
+  - type: ColumnPanel
+    properties: {role: card, col_widths: '{}'}
+    name: card_5
+    layout_properties: {grid_position: 'ZWYAMV,XJDGPO'}
+    components:
+    - type: Label
+      properties: {role: title, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: Progress}
+      name: label_13
+      layout_properties: {grid_position: 'NNDSER,RCPRGZ'}
+    - type: Plot
+      properties: {spacing_above: small, spacing_below: small, height: '370', visible: true, tooltip: '', interactive: true}
+      name: plot_2
+      layout_properties: {grid_position: 'HLFJOM,CDHIEY'}
+  - type: ColumnPanel
+    properties: {role: card, col_widths: '{}'}
+    name: card_6
+    layout_properties: {grid_position: 'ZWYAMV,QWVFNP'}
+    components:
+    - type: Label
+      properties: {role: title, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: Files}
+      name: label_15
+      layout_properties: {grid_position: 'ZCOOLF,ZNQHMJ'}
+    - type: DataGrid
+      properties:
+        role: null
+        spacing_above: small
+        columns:
+        - {id: KJILYV, title: Filename, data_key: filename, $$hashKey: 'object:16742'}
+        - {id: VSSQIK, title: Author, data_key: author, $$hashKey: 'object:16743'}
+        - {id: KXESPC, title: Created, data_key: created, $$hashKey: 'object:16744'}
+        background: ''
+        rows_per_page: 20
+        wrap_on: never
+        foreground: ''
+        show_page_controls: true
+        auto_header: true
+        spacing_below: small
+        visible: true
+        border: ''
+        tooltip: ''
+      name: data_grid_1
+      layout_properties: {grid_position: 'IZDBPZ,LYWXJH'}
+      components:
+      - type: RepeatingPanel
+        properties: {spacing_above: none, spacing_below: none, item_template: Frame.RowTemplate1}
+        name: repeating_panel_1
+        layout_properties: {}
+  - type: ColumnPanel
+    properties: {role: card, col_widths: '{"VVWOID":20,"EQOCFH":40}'}
+    name: card_7
+    layout_properties: {grid_position: 'VBSHUS,ITBTPJ'}
+    components:
+    - type: Label
+      properties: {role: title, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: Sales Overview}
+      name: label_14
+      layout_properties: {grid_position: 'COJSHM,SJUNTI'}
+    - type: DropDown
+      properties:
+        role: null
+        include_placeholder: false
+        bold: false
+        align: full
+        placeholder: ''
+        spacing_above: small
+        background: ''
+        underline: false
+        font: ''
+        foreground: ''
+        items: ['2023', '2022', '2021']
+        spacing_below: small
+        visible: true
+        border: ''
+        italic: false
+        enabled: true
+        font_size: null
+        tooltip: ''
+      name: drop_down_1
+      layout_properties: {grid_position: 'TZAZUJ,VVWOID'}
+      event_bindings: {change: drop_down_1_change}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_1
+      layout_properties: {grid_position: 'TZAZUJ,EQOCFH'}
+    - type: Plot
+      properties: {}
+      name: plot_1
+      layout_properties: {grid_position: 'SUCQSU,YFBPJA'}
+is_package: true
