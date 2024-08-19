@@ -1,152 +1,346 @@
 container:
   type: ColumnPanel
-  properties: {background: ''}
+  properties: {background: white, foreground: ''}
 components:
-- name: Title
-  properties: {text: Admin Dashboard, bold: true, visible: true, icon: '', font_size: 26, align: center}
-  type: Label
-  layout_properties: {grid_position: 'GHSKJV,AMSEUI', full_width_row: true, row_background: ''}
-  data_bindings: []
-- name: strategyTabs
-  properties: {role: null, spacing_above: large, col_spacing: medium}
+- name: titleBar
+  properties: {role: card, background: white, foreground: '', col_spacing: huge}
   type: ColumnPanel
-  layout_properties: {grid_position: 'PLAEYV,NCZQOO', full_width_row: false}
+  layout_properties: {grid_position: '', full_width_row: true}
   components:
-  - name: strategyTab1
-    properties: {text: Strategy 1}
-    type: Button
-    layout_properties: {grid_position: 'YRGMYM,GKJVDT'}
-    event_bindings: {click: strategyTab1_click}
-  - name: strategyTab2
-    properties: {text: Strategy 2}
-    type: Button
-    layout_properties: {grid_position: 'YRGMYM,PUQYPT'}
-    event_bindings: {click: strategyTab2_click}
-  - name: strategyTab3
-    properties: {text: strategy 3, foreground: white}
-    type: Button
-    layout_properties: {grid_position: 'YRGMYM,JCDRDT'}
-    event_bindings: {click: strategyTab3_click}
-- name: strategy1_card
-  properties: {role: card}
-  type: ColumnPanel
-  layout_properties: {grid_position: 'NWIJSY,RYMJGQ'}
-  components:
-  - name: column_panel_3
-    properties: {spacing_above: large}
+  - name: title
+    properties: {text: Admin Dashboard, bold: true, visible: true, icon: '', font_size: 26, align: center, foreground: black}
+    type: Label
+    layout_properties: {grid_position: 'WOUDDL,JDPAXH'}
+    data_bindings: []
+  - name: UserProfile
+    properties: {role: card, background: white, col_spacing: tiny}
     type: ColumnPanel
-    layout_properties: {grid_position: 'DPKKDB,RNSCAA FPMYSM,PBRVDG'}
+    layout_properties: {grid_position: 'WOUDDL,ELCVJS'}
     components:
-    - name: button_1
-      properties: {text: Trade Entry}
-      type: Button
-      layout_properties: {grid_position: 'KNMBYH,NGGEKY'}
-    - name: button_2
-      properties: {text: Trade exit}
-      type: Button
-      layout_properties: {grid_position: 'KNMBYH,QQTFSF'}
-    - name: button_3
-      properties: {text: auto exit}
-      type: Button
-      layout_properties: {grid_position: 'KNMBYH,SNKSSA'}
-  - name: card_2
-    properties: {role: card}
-    type: ColumnPanel
-    layout_properties: {grid_position: 'DPKKDB,DKVNFX'}
-    components:
-    - name: label_4
-      properties: {text: 'Account Holder:'}
+    - name: label_6
+      properties: {text: <Username>, foreground: black, bold: true, align: right}
       type: Label
-      layout_properties: {grid_position: 'RRFHLK,DGXRBT'}
-    - name: accountDropDown
-      properties:
-        items: [Uddipan, Sameer, Arnav]
-        include_placeholder: false
-        placeholder: Account
-      type: DropDown
-      layout_properties: {grid_position: 'RRFHLK,OPRWXJ'}
-    - name: activeTrades
-      properties: {role: card, spacing_above: large}
-      type: ColumnPanel
-      layout_properties: {grid_position: 'LSOVPL,TEAQVJ'}
-      components:
-      - name: label_5
-        properties: {text: Active Trades}
-        type: Label
-        layout_properties: {grid_position: 'WAAMTL,UNSELC'}
-      - name: linear_panel_1
-        properties: {}
-        type: LinearPanel
-        layout_properties: {grid_position: 'MHZFGG,HINIGU'}
-    - name: card_3
-      properties: {role: card, spacing_above: large}
-      type: ColumnPanel
-      layout_properties: {grid_position: 'NELBTZ,RKNZEQ'}
-      components:
-      - name: label_6
-        properties: {text: Logs}
-        type: Label
-        layout_properties: {grid_position: 'IVQGQD,AQJYGM'}
-      - name: linear_panel_2
-        properties: {}
-        type: LinearPanel
-        layout_properties: {grid_position: 'VUZEKK,OKMJWE'}
-  - name: card_4
-    properties: {role: card}
+      layout_properties: {grid_position: 'MIQHRJ,QMWYPZ'}
+    - name: logoutButton
+      properties: {text: Logout, foreground: black, align: left}
+      type: Button
+      layout_properties: {grid_position: 'MIQHRJ,ESABPR'}
+- name: body
+  properties: {role: card, background: white}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'FHNRVG,ALETJZ'}
+  components:
+  - name: strategyTabs
+    properties: {role: null, spacing_above: large, col_spacing: medium}
     type: ColumnPanel
-    layout_properties: {grid_position: 'DPKKDB,RNSCAA HSQTAC,KYEKFP'}
+    layout_properties: {grid_position: 'AXBLCF,SSBAKK'}
     components:
-    - name: card_5
-      properties: {role: card}
+    - name: strategyTab1
+      properties: {text: Strategy 1, border: '', foreground: black, role: null, background: '', tooltip: ''}
+      type: Button
+      layout_properties: {grid_position: 'YRGMYM,GKJVDT'}
+      event_bindings: {click: strategyTab1_click}
+      data_bindings:
+      - {property: border, code: '', writeback: false}
+    - name: strategyTab2
+      properties: {text: Strategy 2, foreground: black, border: blue}
+      type: Button
+      layout_properties: {grid_position: 'YRGMYM,PUQYPT'}
+      event_bindings: {click: strategyTab2_click}
+    - name: strategyTab3
+      properties: {text: strategy 3, foreground: black}
+      type: Button
+      layout_properties: {grid_position: 'YRGMYM,JCDRDT'}
+      event_bindings: {click: strategyTab3_click}
+    - name: strategyFieldWindow
+      properties: {role: card, background: white}
       type: ColumnPanel
-      layout_properties: {grid_position: 'VJUSJD,GXAPKU'}
+      layout_properties: {grid_position: 'VQNILB,OSMJJM'}
       components:
-      - name: drop_down_1
-        properties:
-          include_placeholder: false
-          placeholder: Accounts
-          items: [All, Uddipan, Sameer, Arnav]
-        type: DropDown
-        layout_properties: {grid_position: 'ZRJHMP,FRPYVW'}
-      - name: drop_down_2
-        properties: {placeholder: XXX, include_placeholder: true}
-        type: DropDown
-        layout_properties: {grid_position: 'ZRJHMP,XGTLST'}
-      - name: drop_down_3
-        properties: {placeholder: XXXX, include_placeholder: true}
-        type: DropDown
-        layout_properties: {grid_position: 'ZRJHMP,HENCWM'}
-    - name: fields
-      properties: {role: card}
-      type: ColumnPanel
-      layout_properties: {grid_position: 'IJYCFK,OYHOBR'}
-      components:
-      - name: label_1
-        properties: {text: Field_1}
-        type: Label
-        layout_properties: {grid_position: 'RPOHYW,WJHTSY'}
-      - name: text_box_3
-        properties: {}
-        type: TextBox
-        layout_properties: {grid_position: 'RPOHYW,WOGSLA'}
-      - name: label_2
-        properties: {text: Field_2}
-        type: Label
-        layout_properties: {grid_position: 'TJGKLR,KGBBXA CSRHGK,DUIEDE TUDCLP,BPRWEX'}
-      - name: label_3
-        properties: {text: Field_3}
-        type: Label
-        layout_properties: {grid_position: 'TJGKLR,KGBBXA CSRHGK,DUIEDE LRAPWV,KGMIHA'}
-      - name: text_box_4
-        properties: {}
-        type: TextBox
-        layout_properties: {grid_position: 'TJGKLR,KGBBXA CSRHGK,XEIZOJ PSCVLM,GITULH'}
-      - name: text_box_5
-        properties: {}
-        type: TextBox
-        layout_properties: {grid_position: 'TJGKLR,KGBBXA CSRHGK,XEIZOJ GLFELA,OQKZJU'}
-      - name: button_4
-        properties: {text: Place ORder, spacing_above: large}
-        type: Button
-        layout_properties: {grid_position: 'INFVJM,QEVHVK'}
+      - name: strategy1_card
+        properties: {role: card, background: white}
+        type: ColumnPanel
+        layout_properties: {grid_position: 'YFYEGS,MZUNML'}
+        components:
+        - name: strategy1tabs
+          properties: {spacing_above: large}
+          type: ColumnPanel
+          layout_properties: {grid_position: 'DPKKDB,RNSCAA'}
+          components:
+          - name: tradeEntry
+            properties: {text: Trade Entry, foreground: black}
+            type: Button
+            layout_properties: {grid_position: 'KNMBYH,NGGEKY'}
+            event_bindings: {click: tradeEntry_click}
+          - name: tradeExit
+            properties: {text: Trade exit, foreground: black}
+            type: Button
+            layout_properties: {grid_position: 'KNMBYH,QQTFSF'}
+            event_bindings: {click: tradeExit_click}
+          - name: autoExit
+            properties: {text: auto exit, foreground: black}
+            type: Button
+            layout_properties: {grid_position: 'KNMBYH,SNKSSA'}
+            event_bindings: {click: autoExit_click}
+          - name: tradeEntryCard
+            properties: {role: card, background: white, col_widths: '{"SHWTVA":30}'}
+            type: ColumnPanel
+            layout_properties: {grid_position: 'OLJGMA,VJBWZN'}
+            components:
+            - name: tradeEntryDropdowns
+              properties: {role: card, background: white}
+              type: ColumnPanel
+              layout_properties: {grid_position: 'VJUSJD,GXAPKU'}
+              components:
+              - name: tradeEntryAccounts
+                properties:
+                  include_placeholder: false
+                  placeholder: Accounts
+                  items: [All, Uddipan, Sameer, Arnav]
+                  background: white
+                  foreground: black
+                type: DropDown
+                layout_properties: {grid_position: 'ZRJHMP,FRPYVW'}
+            - name: tradeEntryfields
+              properties: {role: card, background: white}
+              type: ColumnPanel
+              layout_properties: {grid_position: 'IJYCFK,OYHOBR'}
+              components:
+              - name: label_1
+                properties: {text: Buy Strike, foreground: black}
+                type: Label
+                layout_properties: {grid_position: 'RPOHYW,WJHTSY KRMYCW,BEXYXC'}
+              - name: label_2
+                properties: {text: Sell Strike, foreground: black}
+                type: Label
+                layout_properties: {grid_position: 'RPOHYW,WJHTSY PWSTRA,COPIWR'}
+              - name: label_3
+                properties: {text: Option Type, foreground: black}
+                type: Label
+                layout_properties: {grid_position: 'RPOHYW,WJHTSY PEREGG,ZIYQXN'}
+              - name: label_4
+                properties: {text: Expiry Preference, foreground: black}
+                type: Label
+                layout_properties: {grid_position: 'RPOHYW,WJHTSY UDQCDZ,SVSUIA'}
+              - name: text_box_3
+                properties: {background: white, border: '', foreground: black}
+                type: TextBox
+                layout_properties: {grid_position: 'RPOHYW,WOGSLA WGPABJ,ZQZNSM'}
+              - name: text_box_4
+                properties: {background: white, border: '', foreground: black}
+                type: TextBox
+                layout_properties: {grid_position: 'RPOHYW,WOGSLA ATMVTB,QVHJII'}
+              - name: text_box_5
+                properties: {background: white, foreground: black}
+                type: TextBox
+                layout_properties: {grid_position: 'RPOHYW,WOGSLA JWPXPW,FOCFWO'}
+              - name: text_box_1
+                properties: {background: white, foreground: black}
+                type: TextBox
+                layout_properties: {grid_position: 'RPOHYW,WOGSLA QZXTPO,WQHZLX'}
+              - name: tradeEntryButton
+                properties: {text: Place ORder, spacing_above: large, foreground: black, role: filled, background: '#5e8fff'}
+                type: Button
+                layout_properties: {grid_position: 'INFVJM,QEVHVK'}
+          - name: tradeExitCard
+            properties: {role: card, background: white}
+            type: ColumnPanel
+            layout_properties: {grid_position: 'HRMSQM,XMYTBY'}
+            components:
+            - name: tradeExitDropdowns
+              properties: {role: card, background: white}
+              type: ColumnPanel
+              layout_properties: {grid_position: 'JKHHYJ,HRPKGK'}
+              components:
+              - name: tradeExitAccounts
+                properties:
+                  include_placeholder: false
+                  placeholder: Accounts
+                  items: [All, Uddipan, Sameer, Arnav]
+                  background: white
+                  foreground: black
+                type: DropDown
+                layout_properties: {grid_position: 'ZRJHMP,FRPYVW'}
+            - name: tradeExitfields
+              properties: {role: card, background: white}
+              type: ColumnPanel
+              layout_properties: {grid_position: 'IGBCWL,YAPORQ'}
+              components:
+              - name: label_5
+                properties: {text: Active Trades, background: white, foreground: black}
+                type: Label
+                layout_properties: {grid_position: 'RPOHYW,WJHTSY RNKIBS,RXDORS'}
+              - name: label_1_copy
+                properties: {text: Buy Strike, foreground: black}
+                type: Label
+                layout_properties: {grid_position: 'RPOHYW,WJHTSY KRMYCW,BEXYXC'}
+              - name: label_2_copy
+                properties: {text: Sell Strike, foreground: black}
+                type: Label
+                layout_properties: {grid_position: 'RPOHYW,WJHTSY PWSTRA,COPIWR'}
+              - name: label_3_copy
+                properties: {text: Option Type, foreground: black}
+                type: Label
+                layout_properties: {grid_position: 'RPOHYW,WJHTSY PEREGG,ZIYQXN'}
+              - name: label_4_copy
+                properties: {text: Expiry Preference, foreground: black}
+                type: Label
+                layout_properties: {grid_position: 'RPOHYW,WJHTSY UDQCDZ,SVSUIA'}
+              - name: drop_down_1
+                properties: {placeholder: Select Trade, background: white, foreground: black, include_placeholder: true}
+                type: DropDown
+                layout_properties: {grid_position: 'RPOHYW,WOGSLA ZTGOAQ,HZIHRM'}
+              - name: text_box_3_copy
+                properties: {background: white, border: '', foreground: black}
+                type: TextBox
+                layout_properties: {grid_position: 'RPOHYW,WOGSLA WGPABJ,ZQZNSM'}
+              - name: text_box_4_copy
+                properties: {background: white, border: '', foreground: black}
+                type: TextBox
+                layout_properties: {grid_position: 'RPOHYW,WOGSLA ATMVTB,QVHJII'}
+              - name: text_box_5_copy
+                properties: {background: white, foreground: black}
+                type: TextBox
+                layout_properties: {grid_position: 'RPOHYW,WOGSLA JWPXPW,FOCFWO'}
+              - name: text_box_1_copy
+                properties: {background: white, foreground: black}
+                type: TextBox
+                layout_properties: {grid_position: 'RPOHYW,WOGSLA QZXTPO,WQHZLX'}
+              - name: tradeExitButton
+                properties: {text: Place ORder, spacing_above: large, foreground: black, role: filled, background: '#5e8fff'}
+                type: Button
+                layout_properties: {grid_position: 'INFVJM,QEVHVK'}
+          - name: autoExitCard
+            properties: {role: card, background: white}
+            type: ColumnPanel
+            layout_properties: {grid_position: 'YPIOVX,TRJTJV'}
+            components:
+            - name: autoExityDropdowns
+              properties: {role: card, background: white}
+              type: ColumnPanel
+              layout_properties: {grid_position: 'VJUSJD,GXAPKU'}
+              components:
+              - name: auotExitAccounts
+                properties:
+                  include_placeholder: false
+                  placeholder: Accounts
+                  items: [All, Uddipan, Sameer, Arnav]
+                  background: white
+                  foreground: black
+                type: DropDown
+                layout_properties: {grid_position: 'ZRJHMP,FRPYVW'}
+            - name: autoExitfields
+              properties: {role: card, background: white}
+              type: ColumnPanel
+              layout_properties: {grid_position: 'RVICTQ,GDGAKW'}
+              components:
+              - name: label_5_copy
+                properties: {text: NF Target, foreground: black}
+                type: Label
+                layout_properties: {grid_position: 'RPOHYW,WJHTSY QEXLVS,MFBNAS'}
+              - name: label_6_copy
+                properties: {foreground: black, text: NF SL}
+                type: Label
+                layout_properties: {grid_position: 'RPOHYW,WJHTSY YOLZZF,XVLQGK'}
+              - name: label_7_copy
+                properties: {foreground: black, text: PnL Target}
+                type: Label
+                layout_properties: {grid_position: 'RPOHYW,WJHTSY EGRZCK,CTDWTC'}
+              - name: label_8_copy
+                properties: {foreground: black, text: PnL SL}
+                type: Label
+                layout_properties: {grid_position: 'RPOHYW,WJHTSY UBANWB,RFMEKK'}
+              - name: text_box_2_copy
+                properties: {background: white, foreground: black}
+                type: TextBox
+                layout_properties: {grid_position: 'RPOHYW,WOGSLA YXIBWW,UWGTYG'}
+              - name: text_box_6_copy
+                properties: {background: white, foreground: black}
+                type: TextBox
+                layout_properties: {grid_position: 'RPOHYW,WOGSLA YZINLW,CKADVT'}
+              - name: text_box_7_copy
+                properties: {background: white, foreground: black}
+                type: TextBox
+                layout_properties: {grid_position: 'RPOHYW,WOGSLA RAJQWG,ISIPTR'}
+              - name: text_box_8_copy
+                properties: {background: white, foreground: black}
+                type: TextBox
+                layout_properties: {grid_position: 'RPOHYW,WOGSLA GQANPY,RHFWNT'}
+              - name: autoExitButton
+                properties: {text: Place ORder, spacing_above: large, foreground: black, role: filled, background: '#5e8fff'}
+                type: Button
+                layout_properties: {grid_position: 'INFVJM,QEVHVK'}
+        - name: strategy1outputs
+          properties: {role: card, background: white}
+          type: ColumnPanel
+          layout_properties: {grid_position: 'DPKKDB,DKVNFX'}
+          components:
+          - name: accountHolderLabel
+            properties: {text: 'Account Holder:', background: '', foreground: black}
+            type: Label
+            layout_properties: {grid_position: 'RRFHLK,DGXRBT'}
+          - name: accountDropDown
+            properties:
+              items: [Uddipan, Sameer, Arnav]
+              include_placeholder: false
+              placeholder: Account
+              background: white
+              foreground: black
+              border: black
+            type: DropDown
+            layout_properties: {grid_position: 'RRFHLK,OPRWXJ'}
+          - name: activeTrades
+            properties: {role: card, spacing_above: large, background: white}
+            type: ColumnPanel
+            layout_properties: {grid_position: 'LSOVPL,TEAQVJ'}
+            components:
+            - name: activeTradesLabel
+              properties: {text: Active Trades, background: '', foreground: black}
+              type: Label
+              layout_properties: {grid_position: 'WAAMTL,UNSELC'}
+            - name: activeTradesOutput
+              properties: {border: '#ffffff'}
+              type: LinearPanel
+              layout_properties: {grid_position: 'MHZFGG,HINIGU'}
+          - name: tradeLogs
+            properties: {role: card, spacing_above: large, background: white}
+            type: ColumnPanel
+            layout_properties: {grid_position: 'NELBTZ,RKNZEQ'}
+            components:
+            - name: strategyLogs
+              properties: {text: Logs, foreground: black}
+              type: Label
+              layout_properties: {grid_position: 'IVQGQD,AQJYGM'}
+            - name: strategyLogsOutput
+              properties: {}
+              type: LinearPanel
+              layout_properties: {grid_position: 'VUZEKK,OKMJWE'}
+      - name: strategy2_card
+        properties: {role: card, background: white}
+        type: ColumnPanel
+        layout_properties: {grid_position: 'KAGYQI,ESVVKX'}
+        components:
+        - name: strategy1outputs_copy
+          properties: {role: card, background: white}
+          type: ColumnPanel
+          layout_properties: {grid_position: 'DPKKDB,DKVNFX'}
+          components:
+          - name: accountHolderLabel_copy
+            properties: {text: COMING SOON., background: '', foreground: black, align: center}
+            type: Label
+            layout_properties: {grid_position: 'RRFHLK,DGXRBT'}
+      - name: strategy3_card
+        properties: {role: card, background: white}
+        type: ColumnPanel
+        layout_properties: {grid_position: 'OLZBSW,CJACPD'}
+        components:
+        - name: strategy1outputs_copy_copy
+          properties: {role: card, background: white}
+          type: ColumnPanel
+          layout_properties: {grid_position: 'DPKKDB,DKVNFX'}
+          components:
+          - name: accountHolderLabel_copy_copy
+            properties: {text: COMING SOON., background: '', foreground: black, align: center}
+            type: Label
+            layout_properties: {grid_position: 'RRFHLK,DGXRBT'}
 is_package: true
