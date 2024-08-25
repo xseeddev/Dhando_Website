@@ -12,6 +12,7 @@ from .stockDetailsOverlay import stockDetailsOverlay
 class stockScreener(stockScreenerTemplate):
     def __init__(self, **properties):
         # Set Form properties and Data Bindings.
+        anvil.users.login_with_form()
         self.init_components(**properties)
         self.overlay = None
         self.overlay_container = None  # Add a container for the overlay
@@ -41,4 +42,5 @@ class stockScreener(stockScreenerTemplate):
 
     def logoutButton_click(self, **event_args):
         """Event handler for the logout button."""
+        self.add_component(open_form('Logout'))
         self.showStockDetailOverlay()

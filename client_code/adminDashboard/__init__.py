@@ -12,6 +12,7 @@ from anvil.tables import app_tables
 class adminDashboard(adminDashboardTemplate):
     def __init__(self, **properties):
         # Set Form properties and Data Bindings.
+        anvil.users.login_with_form()
         self.init_components(**properties)
         
         # Set initial visibility when the form opens
