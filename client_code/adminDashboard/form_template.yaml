@@ -326,7 +326,7 @@ components:
           layout_properties: {grid_position: 'DPKKDB,DKVNFX'}
           components:
           - name: accountHolderLabel_copy
-            properties: {text: COMING SOON., background: '', foreground: black, align: center}
+            properties: {text: COMING SOON 1., background: '', foreground: black, align: center}
             type: Label
             layout_properties: {grid_position: 'RRFHLK,DGXRBT'}
       - name: strategy3_card
