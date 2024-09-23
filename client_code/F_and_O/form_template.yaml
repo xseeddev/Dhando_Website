@@ -1,0 +1,12 @@
+components:
+- components:
+  - layout_properties: {grid_position: 'GGBOVR,PBQZHB'}
+    name: title_text
+    properties: {align: center, bold: true, font_size: 30, text: WELCOME TO THE F&O!}
+    type: Label
+  layout_properties: {full_width_row: true, grid_position: 'JVJXGL,ULYTRD'}
+  name: f_and_o_page_title
+  properties: {role: card}
+  type: ColumnPanel
+container: {type: ColumnPanel}
+is_package: true

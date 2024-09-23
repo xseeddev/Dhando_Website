@@ -1,3 +1,24 @@
-components: []
+components:
+- components:
+  - layout_properties: {grid_position: 'GGBOVR,PBQZHB'}
+    name: title_text
+    properties: {align: center, bold: true, font_size: 30, text: WELCOME TO THE TOOLS PAGE!}
+    type: Label
+  layout_properties: {full_width_row: true, grid_position: 'AMFTGH,OUFIWC'}
+  name: tools_page_title
+  properties: {role: card}
+  type: ColumnPanel
+- layout_properties: {full_width_row: true, grid_position: 'VQILNF,QZUOEI'}
+  name: spacer_title
+  properties: {height: 120.13333129882812}
+  type: Spacer
+- layout_properties: {grid_position: 'UMYOCI,PDGEBQ'}
+  name: stock_screener_button
+  properties: {text: Stock screener}
+  type: Button
+- layout_properties: {grid_position: 'UMYOCI,ROTAGJ'}
+  name: F_and_O_button
+  properties: {text: F & O}
+  type: Button
 container: {type: ColumnPanel}
 is_package: true
