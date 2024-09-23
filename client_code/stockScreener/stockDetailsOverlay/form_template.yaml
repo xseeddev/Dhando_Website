@@ -1,39 +1,39 @@
-container: {type: ColumnPanel}
 components:
-- name: stockTitle
-  properties: {role: card, background: white, foreground: black}
-  type: ColumnPanel
-  layout_properties: {grid_position: 'CQICIU,EATKUM'}
-  components:
-  - name: label_1
-    properties: {text: Name, bold: true, font_size: 28}
+- components:
+  - layout_properties: {grid_position: 'HUZTFO,ZQAJJH'}
+    name: label_1
+    properties: {bold: true, font_size: 28, text: Name}
     type: Label
-    layout_properties: {grid_position: 'HUZTFO,ZQAJJH'}
-  - name: label_2
-    properties: {text: <SYMBOL>, bold: true, font_size: 28}
+  - layout_properties: {grid_position: 'HUZTFO,IDAZCV'}
+    name: label_2
+    properties: {bold: true, font_size: 28, text: <SYMBOL>}
     type: Label
-    layout_properties: {grid_position: 'HUZTFO,IDAZCV'}
-  - name: label_3
-    properties: {text: 'CMP:', bold: true, font_size: 25, align: right}
+  - layout_properties: {grid_position: 'HUZTFO,VNISVH'}
+    name: label_3
+    properties: {align: right, bold: true, font_size: 25, text: 'CMP:'}
     type: Label
-    layout_properties: {grid_position: 'HUZTFO,VNISVH'}
-  - name: close_button
-    properties: {text: Close, align: right, foreground: black}
-    type: Button
+  - event_bindings: {click: close_button_click}
     layout_properties: {grid_position: 'HUZTFO,TDZALX'}
-    event_bindings: {click: close_button_click}
-- name: data_grid_1
-  properties:
-    columns:
-    - {id: JKSDUP, title: Column 1, data_key: column_1}
-    - {id: VJQQOR, title: Column 2, data_key: column_2}
-    - {id: OJLQEN, title: Column 3, data_key: column_3}
-    background: white
-    foreground: black
-  type: DataGrid
-  components:
+    name: close_button
+    properties: {align: right, foreground: black, text: Close}
+    type: Button
+  layout_properties: {grid_position: 'CQICIU,EATKUM'}
+  name: stockTitle
+  properties: {background: white, foreground: black, role: card}
+  type: ColumnPanel
+- components:
   - name: repeating_panel_1
     properties: {item_template: stockScreener.stockDetailsOverlay.RowTemplate4}
     type: RepeatingPanel
   layout_properties: {grid_position: 'RSBJRF,ZDCVEY'}
+  name: data_grid_1
+  properties:
+    background: white
+    columns:
+    - {data_key: column_1, id: JKSDUP, title: Column 1}
+    - {data_key: column_2, id: VJQQOR, title: Column 2}
+    - {data_key: column_3, id: OJLQEN, title: Column 3}
+    foreground: black
+  type: DataGrid
+container: {type: ColumnPanel}
 is_package: true

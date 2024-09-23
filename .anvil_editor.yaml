@@ -1,21 +1,17 @@
 unique_ids:
-  forms:
-    Frame.RowTemplate1: '1685451964302579052587676.3344'
-    adminDashboard: '1723993573600269847188884.21378'
-    Logout: '1685456931247635017053252.7155'
-    stockScreener.RowTemplate3: '1724045536506191485445578.04968'
-    Sales: '1685452827810810401583930.4839'
-    stockScreener.stockDetailsOverlay.RowTemplate4: '1724046505974966867520865.7334'
-    stockScreener: '1724044623835514272397345.06006'
-    stockScreener.stockDetailsOverlay: '17240464688545415665734.617381'
-    adminDashboard.RowTemplate2: '1723994649318904290618410.1183'
-    Frame: W4AJINNNK6GE56SS5BBPZFEUYSYVUQXM
-    Reports: '1685452921916319245502744.5724'
-  modules: {}
-  server_modules:
-    ServerModule1: '1685452365618467403552812.8588'
   assets:
     standard-page.html: MD5G2GHFAVWRJ5VSBZKNN45Q6NRNQBBD
     stockDetailsOverlay.css: '1724047879023746350256495.9939'
     theme.css: YHRPJKIIYKWDQZUBLCIQ7MIUZQUXJWBB
+  forms:
+    Logout: '1685456931247635017053252.7155'
+    adminDashboard: '1723993573600269847188884.21378'
+    adminDashboard.RowTemplate2: '1723994649318904290618410.1183'
+    stockScreener: '1724044623835514272397345.06006'
+    stockScreener.RowTemplate3: '1724045536506191485445578.04968'
+    stockScreener.stockDetailsOverlay: '17240464688545415665734.617381'
+    stockScreener.stockDetailsOverlay.RowTemplate4: '1724046505974966867520865.7334'
+  modules: {}
   scripts: {}
+  server_modules:
+    server: '1685452365618467403552812.8588'
