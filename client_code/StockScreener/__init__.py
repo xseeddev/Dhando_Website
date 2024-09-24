@@ -15,3 +15,13 @@ class StockScreener(StockScreenerTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    self.predefined_scans_button_click()
+
+  def predefined_scans_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.custom_scans_body.visible = False
+
+  def custom_scan_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.predefined_scans_body.visible = False
+    self.custom_scans_body.visible = True
