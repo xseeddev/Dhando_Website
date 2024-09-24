@@ -1,19 +1,24 @@
 components:
 - layout_properties: {full_width_row: true, grid_position: 'ZUEVNM,BHYLJV'}
-  name: navbar_section
+  name: home_navbar
   properties: {role: card}
   type: ColumnPanel
 - components:
-  - layout_properties: {grid_position: 'AEKPWE,CGANIJ'}
-    name: body_title
+  - layout_properties: {grid_position: 'HGJBLB,CHAWJS'}
+    name: content_title
     properties: {align: center, bold: true, font_size: 29, text: WELCOME TO DHANDO, underline: true}
     type: Label
-  - layout_properties: {grid_position: 'AGOMHZ,EWJHKR'}
-    name: body_text
-    properties: {text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'}
-    type: Label
-  layout_properties: {full_width_row: true, grid_position: 'XRZQGN,TVLAMT'}
-  name: body_section
+  - components:
+    - layout_properties: {grid_position: 'XRZHUC,ZTBTNO'}
+      name: content_text
+      properties: {text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'}
+      type: Label
+    layout_properties: {grid_position: 'ACEOON,MHOSFB'}
+    name: body
+    properties: {role: null}
+    type: ColumnPanel
+  layout_properties: {full_width_row: true, grid_position: 'DSUXLJ,MGHNGP'}
+  name: homepage_body
   properties: {role: null}
   type: ColumnPanel
 container: {type: ColumnPanel}
