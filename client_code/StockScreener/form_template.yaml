@@ -42,6 +42,38 @@ components:
       name: predefined_scanner_text
       properties: {text: Pre--defined Scanners}
       type: Label
+    - event_bindings: {change: pitrosk_change}
+      layout_properties: {grid_position: 'ALGEZJ,UYODBC'}
+      name: pitrosk
+      properties: {text: Pitrosk Scan}
+      type: CheckBox
+    - event_bindings: {change: darvas_change}
+      layout_properties: {grid_position: 'XGTFVY,KHEWTT'}
+      name: darvas
+      properties: {text: Darvas Scan}
+      type: CheckBox
+    - event_bindings: {change: stevenson_change}
+      layout_properties: {grid_position: 'HHNUCX,PUPEWO'}
+      name: stevenson
+      properties: {text: Stevenson Scan}
+      type: CheckBox
+    - event_bindings: {click: predefined_display_button_click}
+      layout_properties: {grid_position: 'TPITCU,SDZALL'}
+      name: predefined_display_button
+      properties: {text: display}
+      type: Button
+    - components:
+      - name: predefined_display_stocks_rows
+        properties: {item_template: StockScreener.RowTemplate1}
+        type: RepeatingPanel
+      layout_properties: {grid_position: 'XAVTBQ,DIAHGO'}
+      name: predefined_results
+      properties:
+        columns:
+        - {data_key: column_1, id: JKSDUP, title: STOCK NAME}
+        - {data_key: column_2, id: VJQQOR, title: Recommended Buy}
+        - {data_key: column_3, id: OJLQEN, title: Recommended Sell}
+      type: DataGrid
     layout_properties: {full_width_row: true, grid_position: 'IYGRKM,RVASSN'}
     name: predefined_scans_body
     properties: {role: null}
@@ -51,6 +83,72 @@ components:
       name: custom_scans_text
       properties: {text: Custom Scanners}
       type: Label
+    - layout_properties: {grid_position: 'JGRNYX,ZGCVWF'}
+      name: label_marketcap
+      properties: {align: center, bold: true, text: 'MarketCap:'}
+      type: Label
+    - layout_properties: {grid_position: 'JGRNYX,JCKTIO'}
+      name: field_marketcap
+      properties: {}
+      type: TextBox
+    - layout_properties: {grid_position: 'OOTMGV,GNWAQI'}
+      name: label_yoy_sales
+      properties: {align: center, bold: true, text: 'YOY Sales:'}
+      type: Label
+    - layout_properties: {grid_position: 'OOTMGV,YVLEEE'}
+      name: field_yoy_sales
+      properties: {}
+      type: TextBox
+    - layout_properties: {grid_position: 'JDTYDY,GNMFWR'}
+      name: label_yoy_profit
+      properties: {align: center, bold: true, text: 'YOY profit:'}
+      type: Label
+    - layout_properties: {grid_position: 'JDTYDY,LDRWLA'}
+      name: field_yoy_profit
+      properties: {}
+      type: TextBox
+    - layout_properties: {grid_position: 'SURIOM,HPOLFH'}
+      name: label_net_profit
+      properties: {align: center, bold: true, text: 'Net Profit:'}
+      type: Label
+    - event_bindings: {}
+      layout_properties: {grid_position: 'SURIOM,GNVANW'}
+      name: field_net_profit
+      properties: {}
+      type: TextBox
+    - layout_properties: {grid_position: 'LSLRYR,TFGBSM'}
+      name: label_pe_ratio
+      properties: {align: center, bold: true, text: 'PE Ratio:'}
+      type: Label
+    - layout_properties: {grid_position: 'LSLRYR,EESIRR'}
+      name: field_pe_ratio
+      properties: {}
+      type: TextBox
+    - layout_properties: {grid_position: 'FBNVNP,IHKBJD'}
+      name: label_max_roce
+      properties: {align: center, bold: true, text: 'ROCE:'}
+      type: Label
+    - layout_properties: {grid_position: 'FBNVNP,WHFEUQ'}
+      name: field_roce
+      properties: {}
+      type: TextBox
+    - event_bindings: {click: custom_display_button_click}
+      layout_properties: {grid_position: 'IQAJSN,LHYBLX'}
+      name: custom_display_button
+      properties: {text: Display}
+      type: Button
+    - components:
+      - name: custom_display_stocks_rows
+        properties: {item_template: StockScreener.RowTemplate1}
+        type: RepeatingPanel
+      layout_properties: {grid_position: 'HZGADN,QNJVQE'}
+      name: custom_results
+      properties:
+        columns:
+        - {data_key: column_1, id: JKSDUP, title: STOCK NAME}
+        - {data_key: column_2, id: VJQQOR, title: Recommended Buy}
+        - {data_key: column_3, id: OJLQEN, title: Recommended Sell}
+      type: DataGrid
     layout_properties: {full_width_row: true, grid_position: 'WDCRWB,SFMNAH'}
     name: custom_scans_body
     properties: {role: null}

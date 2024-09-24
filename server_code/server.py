@@ -7,3 +7,11 @@ import plotly.graph_objects as go
 from anvil.tables import app_tables
 import anvil.server
 import anvil.plotly_templates
+
+# TODOs:
+'''
+  - Setup profile page.
+  - Setup favourites page.
+  - Fix the reload problem.
+  - Create stock data overlay
+'''
