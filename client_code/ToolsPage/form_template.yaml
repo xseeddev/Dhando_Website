@@ -6,7 +6,7 @@ components:
     type: Label
   layout_properties: {full_width_row: true, grid_position: 'AMFTGH,OUFIWC'}
   name: tools_page_title
-  properties: {role: card}
+  properties: {role: null}
   type: ColumnPanel
 - layout_properties: {full_width_row: true, grid_position: 'VQILNF,QZUOEI'}
   name: spacer_title

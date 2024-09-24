@@ -6,7 +6,7 @@ components:
     type: Label
   layout_properties: {full_width_row: true, grid_position: 'JVJXGL,ULYTRD'}
   name: f_and_o_page_title
-  properties: {role: card}
+  properties: {role: null}
   type: ColumnPanel
 container: {type: ColumnPanel}
 is_package: true
