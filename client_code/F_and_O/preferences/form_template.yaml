@@ -1,0 +1,80 @@
+components:
+- components:
+  - layout_properties: {grid_position: 'JRDNES,NTNRJD'}
+    name: buy_strike_title
+    properties: {align: center, bold: true, text: Buy Strike}
+    type: Label
+  - layout_properties: {grid_position: 'JRDNES,HKHXRQ'}
+    name: buy_strike_field
+    properties: {}
+    type: TextBox
+  - layout_properties: {grid_position: 'KRHNRI,NZANHK'}
+    name: sell_strike_title
+    properties: {align: center, bold: true, text: Sell Strike}
+    type: Label
+  - layout_properties: {grid_position: 'KRHNRI,HHSHVA'}
+    name: sell_strike_field
+    properties: {}
+    type: TextBox
+  - layout_properties: {grid_position: 'MBXEOV,ETNKTE'}
+    name: option_type_label
+    properties: {align: center, bold: true, text: Option Type}
+    type: Label
+  - layout_properties: {grid_position: 'MBXEOV,DCSFDU'}
+    name: option_type_dropdown
+    properties: {}
+    type: DropDown
+  - layout_properties: {grid_position: 'CTKSZD,HGYVSN'}
+    name: expiry_title
+    properties: {align: center, bold: true, text: Expiry Preference}
+    type: Label
+  - layout_properties: {grid_position: 'CTKSZD,FRGTIM'}
+    name: expiry_field
+    properties: {}
+    type: DropDown
+  - layout_properties: {grid_position: 'QEMYYP,ZOKRTT'}
+    name: nifty_target_label
+    properties: {align: center, bold: true, text: Nifty Target}
+    type: Label
+  - layout_properties: {grid_position: 'QEMYYP,IOIUMZ'}
+    name: nifty_target_field
+    properties: {}
+    type: TextBox
+  - layout_properties: {grid_position: 'YZQOKS,SCQDQO'}
+    name: nifty_stoploss_label
+    properties: {align: center, bold: true, text: Nifty Stoploss}
+    type: Label
+  - layout_properties: {grid_position: 'YZQOKS,UCETVA'}
+    name: nifty_stoploss_field
+    properties: {}
+    type: TextBox
+  - layout_properties: {grid_position: 'BWNWFA,BGEOCT'}
+    name: target_label
+    properties: {align: center, bold: true, text: ProfitNLoss Target}
+    type: Label
+  - layout_properties: {grid_position: 'BWNWFA,NMSOPJ'}
+    name: target_field
+    properties: {}
+    type: TextBox
+  - layout_properties: {grid_position: 'CLIWHT,YJOFWT'}
+    name: spotloss_label
+    properties: {align: center, bold: true, text: ProfitNLoss SpotLoss}
+    type: Label
+  - layout_properties: {grid_position: 'CLIWHT,SCYFQI'}
+    name: spotloss_field
+    properties: {}
+    type: TextBox
+  - layout_properties: {grid_position: 'AGAYSK,AKPCNQ'}
+    name: submit_preferences_entry
+    properties: {text: Submit}
+    type: Button
+  - layout_properties: {grid_position: 'AGAYSK,XIBBNZ'}
+    name: clear_button_entry
+    properties: {text: Clear}
+    type: Button
+  layout_properties: {grid_position: 'PEGPND,WULBVT'}
+  name: strategy_1_section
+  properties: {role: null}
+  type: ColumnPanel
+container: {type: ColumnPanel}
+is_package: true

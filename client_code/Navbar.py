@@ -61,4 +61,8 @@ class Navbar(NavbarTemplate):
   def title_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     alert("Not working.")
+
+  def profile_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.homepage.get_profile()
     

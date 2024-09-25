@@ -10,9 +10,5 @@ import anvil.plotly_templates
 
 # TODOs:
 '''
-  - Create stock data overlay
-  - Setup F&O page.
-  - Setup profile page.
-  - Setup favourites page.
   - Fix the reload problem.
 '''

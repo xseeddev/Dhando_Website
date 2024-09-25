@@ -48,7 +48,8 @@ components:
       name: logout_title
       properties: {align: center, bold: true, font_size: 21, text: LOGOUT, underline: true}
       type: Label
-    - layout_properties: {grid_position: 'QZNSYX,CZCQBP'}
+    - event_bindings: {click: profile_button_click}
+      layout_properties: {grid_position: 'QZNSYX,CZCQBP'}
       name: profile_button
       properties: {text: profile}
       type: Button
