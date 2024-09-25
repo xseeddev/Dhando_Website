@@ -14,21 +14,28 @@ components:
     properties: {font_size: 26, text: Stock of the day}
     type: Label
   - components:
-    - layout_properties: {grid_position: 'ZOROOK,BOBLRW'}
-      name: rich_text_1
-      properties: {content: '{stock_name}: {stock_symbol}'}
+    - data_bindings:
+      - {code: 'self.item[''click'']', property: role, writeback: false}
+      layout_properties: {grid_position: 'AFENZU,YJRNHJ ZOROOK,BOBLRW'}
+      name: field_stock_name
+      properties: {content: ''}
       type: RichText
-    - layout_properties: {grid_position: 'ZOROOK,KERKSR'}
-      name: rich_text_4
-      properties: {content: '{stock_cmp}'}
+    - layout_properties: {grid_position: 'AFENZU,YJRNHJ ZOROOK,KERKSR'}
+      name: field_stock_cmp
+      properties: {content: ''}
       type: RichText
-    - layout_properties: {grid_position: 'QIBSAY,TVULOH'}
-      name: rich_text_2
-      properties: {content: '{buy_price}'}
+    - layout_properties: {grid_position: 'AFENZU,YJRNHJ QIBSAY,TVULOH'}
+      name: field_buy_price
+      properties: {content: ''}
       type: RichText
-    - layout_properties: {grid_position: 'QIBSAY,MWSWES'}
-      name: rich_text_3
-      properties: {content: '{sell_price}'}
+    - event_bindings: {click: show_stock_click}
+      layout_properties: {grid_position: 'AFENZU,LTQPJS'}
+      name: show_stock
+      properties: {text: Show}
+      type: Button
+    - layout_properties: {grid_position: 'AFENZU,YJRNHJ QIBSAY,MWSWES'}
+      name: field_sell_price
+      properties: {content: ''}
       type: RichText
     layout_properties: {grid_position: 'MFHQKH,QMZWVQ'}
     name: stock_data
@@ -87,9 +94,10 @@ components:
       name: predefined_results
       properties:
         columns:
-        - {data_key: column_1, id: JKSDUP, title: STOCK NAME}
-        - {data_key: column_2, id: VJQQOR, title: Recommended Buy}
-        - {data_key: column_3, id: OJLQEN, title: Recommended Sell}
+        - {data_key: stock_name, id: JKSDUP, title: STOCK NAME}
+        - {data_key: buy_price, id: VJQQOR, title: Recommended Buy}
+        - {data_key: sell_price, id: OJLQEN, title: Recommended Sell}
+        - {data_key: show_buttons, id: DRBNES, title: Show}
       type: DataGrid
     layout_properties: {full_width_row: true, grid_position: 'IYGRKM,RVASSN'}
     name: predefined_scans_body
@@ -162,9 +170,10 @@ components:
       name: custom_results
       properties:
         columns:
-        - {data_key: column_1, id: JKSDUP, title: STOCK NAME}
-        - {data_key: column_2, id: VJQQOR, title: Recommended Buy}
-        - {data_key: column_3, id: OJLQEN, title: Recommended Sell}
+        - {data_key: stock_name, id: JKSDUP, title: STOCK NAME}
+        - {data_key: buy_price, id: VJQQOR, title: Recommended Buy}
+        - {data_key: sell_price, id: OJLQEN, title: Recommended Sell}
+        - {data_key: show_buttons, id: BIBRYX, title: Show}
       type: DataGrid
     layout_properties: {full_width_row: true, grid_position: 'WDCRWB,SFMNAH'}
     name: custom_scans_body

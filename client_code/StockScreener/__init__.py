@@ -7,6 +7,7 @@ from anvil.google.drive import app_files
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from .StockData import StockData
 
 
 class StockScreener(StockScreenerTemplate):
@@ -22,9 +23,33 @@ class StockScreener(StockScreenerTemplate):
     self.field_net_profit.text = '40'
     self.field_pe_ratio.text = '50'
     self.field_roce.text = '60'
+
+    self.stock_name = None
     
     # Any code you write here will run before the form opens.
     self.predefined_scans_button_click()
+    self.update_recommended_stock()
+
+  def update_recommended_stock(self):
+    # fields (rich text): stock_name, stock_symbol, stock_cmp, buy_price, sell_price
+    recommend_stock = anvil.server.call('get_recommended_stock')
+    self.stock_name = recommend_stock['stock_name']
+    
+    stock_title = RichText(content=f"**{recommend_stock['stock_name']}**: **{recommend_stock['stock_symbol']}**")
+    stock_title.data = recommend_stock
+    self.field_stock_name.add_component(stock_title)
+    
+    stock_cmp = RichText(content=f"**Current Market Price**: {recommend_stock['stock_cmp']}")
+    stock_cmp.data = recommend_stock
+    self.field_stock_cmp.add_component(stock_cmp)
+    
+    buy_price = RichText(content=f"**Recommended Buy Price**: {recommend_stock['buy_price']}")
+    buy_price.data = recommend_stock
+    self.field_buy_price.add_component(buy_price)
+    
+    sell_price = RichText(content=f"**Recommended Sell Price**: {recommend_stock['sell_price']}")
+    sell_price.data = recommend_stock
+    self.field_sell_price.add_component(sell_price)
 
   def predefined_scans_button_click(self, **event_args):
     """This method is called when the predefined scans button is clicked."""
@@ -71,6 +96,11 @@ class StockScreener(StockScreenerTemplate):
     if self.chosen_scans:
       # Join the list into a string and display it in an alert
       alert(f"Selected Scans: {', '.join(self.chosen_scans)}")
+      # call the server to get all the stocks
+      stocks = anvil.server.call('get_chosen_stocks', self.chosen_scans)
+      
+      # display the stocks in the grid predefined_results with columns: stock_name, Recommended buy, Recommended sell
+      self.predefined_display_stocks_rows.items = stocks
     else:
       alert("No scans selected.")
 
@@ -116,8 +146,23 @@ class StockScreener(StockScreenerTemplate):
         f"P/E Ratio: {thresholds['pe_ratio']}\n"
         f"ROCE: {thresholds['roce']}"
     )
-
-    # Alert the user with the threshold values
     alert(result)
+
+    results = anvil.server.call('get_custom_stocks', thresholds)
+    results_with_buttons = []
+    for result in results:
+      show_button = Button(text="Show", tag=result['stock_name'])
+      result['show_button'] = show_button
+      results_with_buttons.append(result)
+    
+    self.custom_display_stocks_rows.items = results_with_buttons
+
+  def show_stock_click(self, sender=None, stock_name=None, **event_args):
+    """This method is called when the Show button is clicked in a row"""
+    print(sender, stock_name)
+    if not sender.tag and not stock_name:
+      stock_name = self.stock_name
+    stock_details = StockData(stock_name)
+    alert(stock_details, large=True)
 
 
