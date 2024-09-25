@@ -15,3 +15,13 @@ class preferences(preferencesTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+
+  def get_trade_entry(self):
+    return self.trade_entry_preferences
+    
+  def get_trade_exit(self):
+    return self.trade_exit_preferences
+  
+  def get_auto_exit(self):
+    return self.auto_exit_preferences
+    

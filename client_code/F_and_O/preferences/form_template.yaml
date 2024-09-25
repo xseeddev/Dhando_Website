@@ -32,38 +32,6 @@ components:
     name: expiry_field
     properties: {}
     type: DropDown
-  - layout_properties: {grid_position: 'QEMYYP,ZOKRTT'}
-    name: nifty_target_label
-    properties: {align: center, bold: true, text: Nifty Target}
-    type: Label
-  - layout_properties: {grid_position: 'QEMYYP,IOIUMZ'}
-    name: nifty_target_field
-    properties: {}
-    type: TextBox
-  - layout_properties: {grid_position: 'YZQOKS,SCQDQO'}
-    name: nifty_stoploss_label
-    properties: {align: center, bold: true, text: Nifty Stoploss}
-    type: Label
-  - layout_properties: {grid_position: 'YZQOKS,UCETVA'}
-    name: nifty_stoploss_field
-    properties: {}
-    type: TextBox
-  - layout_properties: {grid_position: 'BWNWFA,BGEOCT'}
-    name: target_label
-    properties: {align: center, bold: true, text: ProfitNLoss Target}
-    type: Label
-  - layout_properties: {grid_position: 'BWNWFA,NMSOPJ'}
-    name: target_field
-    properties: {}
-    type: TextBox
-  - layout_properties: {grid_position: 'CLIWHT,YJOFWT'}
-    name: spotloss_label
-    properties: {align: center, bold: true, text: ProfitNLoss SpotLoss}
-    type: Label
-  - layout_properties: {grid_position: 'CLIWHT,SCYFQI'}
-    name: spotloss_field
-    properties: {}
-    type: TextBox
   - layout_properties: {grid_position: 'AGAYSK,AKPCNQ'}
     name: submit_preferences_entry
     properties: {text: Submit}
@@ -73,7 +41,69 @@ components:
     properties: {text: Clear}
     type: Button
   layout_properties: {grid_position: 'PEGPND,WULBVT'}
-  name: strategy_1_section
+  name: trade_entry_preferences
+  properties: {role: null}
+  type: ColumnPanel
+- components:
+  - layout_properties: {grid_position: 'CLIWHT,YJOFWT'}
+    name: trade_id_label
+    properties: {align: center, bold: true, text: 'Trade ID:'}
+    type: Label
+  - layout_properties: {grid_position: 'CLIWHT,YAONNA'}
+    name: active_trades
+    properties: {}
+    type: DropDown
+  - layout_properties: {grid_position: 'AGAYSK,XIBBNZ'}
+    name: exit_trade
+    properties: {align: center, text: Exit}
+    type: Button
+  layout_properties: {grid_position: 'GVPMBX,IVYPYP'}
+  name: trade_exit_preferences
+  properties: {role: null}
+  type: ColumnPanel
+- components:
+  - layout_properties: {grid_position: 'QEMYYP,ZOKRTT'}
+    name: nifty_target_label_copy
+    properties: {align: center, bold: true, text: Nifty Target}
+    type: Label
+  - layout_properties: {grid_position: 'QEMYYP,IOIUMZ'}
+    name: nifty_target_field_copy
+    properties: {}
+    type: TextBox
+  - layout_properties: {grid_position: 'YZQOKS,SCQDQO'}
+    name: nifty_stoploss_label_copy
+    properties: {align: center, bold: true, text: Nifty Stoploss}
+    type: Label
+  - layout_properties: {grid_position: 'YZQOKS,UCETVA'}
+    name: nifty_stoploss_field_copy
+    properties: {}
+    type: TextBox
+  - layout_properties: {grid_position: 'BWNWFA,BGEOCT'}
+    name: target_label_copy
+    properties: {align: center, bold: true, text: ProfitNLoss Target}
+    type: Label
+  - layout_properties: {grid_position: 'BWNWFA,NMSOPJ'}
+    name: target_field_copy
+    properties: {}
+    type: TextBox
+  - layout_properties: {grid_position: 'CLIWHT,YJOFWT'}
+    name: spotloss_label_copy
+    properties: {align: center, bold: true, text: ProfitNLoss SpotLoss}
+    type: Label
+  - layout_properties: {grid_position: 'CLIWHT,SCYFQI'}
+    name: spotloss_field_copy
+    properties: {}
+    type: TextBox
+  - layout_properties: {grid_position: 'AGAYSK,AKPCNQ'}
+    name: submit_preferences_entry_copy
+    properties: {text: Submit}
+    type: Button
+  - layout_properties: {grid_position: 'AGAYSK,XIBBNZ'}
+    name: clear_button_entry_copy
+    properties: {text: Clear}
+    type: Button
+  layout_properties: {grid_position: 'XDLXPP,FDIRMU'}
+  name: auto_exit_preferences
   properties: {role: null}
   type: ColumnPanel
 container: {type: ColumnPanel}

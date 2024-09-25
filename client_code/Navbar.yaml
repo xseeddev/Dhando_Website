@@ -54,7 +54,7 @@ components:
       properties: {text: profile}
       type: Button
     - event_bindings: {click: logout_button_click}
-      layout_properties: {grid_position: 'FGGSLS,NSOMNL'}
+      layout_properties: {grid_position: 'QZNSYX,QIBIZI'}
       name: logout_button
       properties: {text: Logout}
       type: Button

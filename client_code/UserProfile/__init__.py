@@ -18,6 +18,7 @@ class UserProfile(UserProfileTemplate):
 
   def favourites_button_click(self, **event_args):
     """This method is called when the button is clicked"""
+    self.body.clear()
     favourites_section = favourites()
     self.body.add_component(favourites_section, full_width_row=True)
     
