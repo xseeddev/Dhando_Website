@@ -11,6 +11,7 @@ from ..Navbar import Navbar
 from ..ToolsPage import ToolsPage
 from ..StockScreener import StockScreener
 from ..F_and_O import F_and_O
+from ..UserProfile import UserProfile
 
 class HomePage(HomePageTemplate):
   def __init__(self, **properties):
@@ -59,3 +60,10 @@ class HomePage(HomePageTemplate):
     f_and_o = F_and_O()
     self.homepage_body.clear()
     self.homepage_body.add_component(f_and_o, full_width_row=True)
+
+  def get_profile(self):
+    self.content_title.visible = False
+    self.content_text.visible = False
+    profile = UserProfile()
+    self.homepage_body.clear()
+    self.homepage_body.add_component(profile, full_width_row=True)

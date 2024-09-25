@@ -1,3 +1,52 @@
-components: []
+components:
+- components:
+  - layout_properties: {grid_position: 'TPMOZO,USVJBX'}
+    name: page_title
+    properties: {align: center, content: 'STOCK DETAILS FOR {STOCK_NAME}', font_size: 18}
+    type: RichText
+  - layout_properties: {grid_position: 'LAIYGA,GFBXHP'}
+    name: spacer_1
+    properties: {height: 44.399993896484375}
+    type: Spacer
+  - components:
+    - layout_properties: {grid_position: 'MWAJSQ,OFXLUY ZYHORN,KIKHSB'}
+      name: stock_name
+      properties: {content: '{stock_name}'}
+      type: RichText
+    - layout_properties: {grid_position: 'MWAJSQ,OFXLUY XGTFCN,MIKYKY'}
+      name: stock_symbol
+      properties: {content: '{stock_symbol}'}
+      type: RichText
+    - layout_properties: {grid_position: 'MWAJSQ,TQCZRG'}
+      name: stock_cmp
+      properties: {align: right, content: '{stock_cmp}'}
+      type: RichText
+    layout_properties: {grid_position: 'IRKAFN,MLZNMO'}
+    name: stock_title
+    properties: {role: card}
+    type: ColumnPanel
+  - components:
+    - components:
+      - layout_properties: {pinned: false}
+        name: stock_details_table_row
+        properties: {item_template: StockScreener.StockData.RowTemplate3}
+        type: RepeatingPanel
+      layout_properties: {grid_position: 'QFCMPO,NCHWIZ'}
+      name: stock_details_table
+      properties:
+        auto_header: false
+        columns:
+        - {data_key: column_1, id: JKSDUP, title: Column 1}
+        - {data_key: column_2, expand: false, id: VJQQOR, title: Column 2, width: 312.7999267578125}
+        - {data_key: column_3, id: OJLQEN, title: Column 3}
+      type: DataGrid
+    layout_properties: {grid_position: 'XTIEEF,VZOTRJ'}
+    name: stock_details
+    properties: {role: card}
+    type: ColumnPanel
+  layout_properties: {full_width_row: true, grid_position: 'DNDXSY,ARUEIL'}
+  name: stock_card
+  properties: {role: card}
+  type: ColumnPanel
 container: {type: ColumnPanel}
 is_package: true
