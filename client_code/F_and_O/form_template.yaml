@@ -4,8 +4,75 @@ components:
     name: title_text
     properties: {align: center, bold: true, font_size: 30, text: WELCOME TO THE F&O!}
     type: Label
+  - components:
+    - components:
+      - layout_properties: {grid_position: 'DKHIQK,HJWKPZ'}
+        name: strategy_1
+        properties: {text: Strategy 1}
+        type: Button
+      - layout_properties: {grid_position: 'DKHIQK,DYORZQ'}
+        name: strategy_2
+        properties: {text: strategy 2}
+        type: Button
+      - layout_properties: {grid_position: 'DKHIQK,MTTDUU'}
+        name: strategy_3
+        properties: {text: strategy 3}
+        type: Button
+      layout_properties: {grid_position: 'FAYNKI,YHKBKT'}
+      name: strategies_section
+      properties: {role: null}
+      type: ColumnPanel
+    - components:
+      - layout_properties: {grid_position: 'ZJFPOH,GEKPKY'}
+        name: label_1
+        properties: {align: right, bold: true, text: 'Account Holder:'}
+        type: Label
+      - layout_properties: {grid_position: 'ZJFPOH,FGBNQN'}
+        name: accounts_dropdown
+        properties: {}
+        type: DropDown
+      - layout_properties: {grid_position: 'DROMPQ,KEVAAS'}
+        name: rich_text_1
+        properties: {align: center, content: 'Active Trades for {selected_account_user}', font_size: 16}
+        type: RichText
+      - components:
+        - name: repeating_panel_1
+          properties: {item_template: F_and_O.RowTemplate6}
+          type: RepeatingPanel
+        layout_properties: {grid_position: 'XEFGAP,HLVZMA'}
+        name: active_trades_grid
+        properties:
+          columns:
+          - {data_key: column_1, id: JKSDUP, title: Column 1}
+          - {data_key: column_2, id: VJQQOR, title: Column 2}
+          - {data_key: column_3, id: OJLQEN, title: Column 3}
+        type: DataGrid
+      - layout_properties: {grid_position: 'KLUGDP,USFNHS'}
+        name: rich_text_2
+        properties: {align: center, content: 'Logs for {date}', font_size: 16}
+        type: RichText
+      - components:
+        - name: repeating_panel_2
+          properties: {item_template: F_and_O.RowTemplate7}
+          type: RepeatingPanel
+        layout_properties: {grid_position: 'FBGKZA,VKDNHH'}
+        name: data_grid_1
+        properties:
+          columns:
+          - {data_key: column_1, id: JKSDUP, title: Column 1}
+          - {data_key: column_2, id: VJQQOR, title: Column 2}
+          - {data_key: column_3, id: OJLQEN, title: Column 3}
+        type: DataGrid
+      layout_properties: {grid_position: 'FAYNKI,BDBCUZ'}
+      name: accounts_section
+      properties: {role: null}
+      type: ColumnPanel
+    layout_properties: {grid_position: 'AUGLXY,TYEIDA'}
+    name: body
+    properties: {role: null}
+    type: ColumnPanel
   layout_properties: {full_width_row: true, grid_position: 'JVJXGL,ULYTRD'}
-  name: f_and_o_page_title
+  name: f_and_o_page
   properties: {role: null}
   type: ColumnPanel
 container: {type: ColumnPanel}
