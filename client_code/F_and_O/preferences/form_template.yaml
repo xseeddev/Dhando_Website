@@ -22,7 +22,8 @@ components:
     type: Label
   - layout_properties: {grid_position: 'MBXEOV,DCSFDU'}
     name: option_type_dropdown
-    properties: {}
+    properties:
+      items: [CE, PE]
     type: DropDown
   - layout_properties: {grid_position: 'CTKSZD,HGYVSN'}
     name: expiry_title
@@ -30,7 +31,8 @@ components:
     type: Label
   - layout_properties: {grid_position: 'CTKSZD,FRGTIM'}
     name: expiry_field
-    properties: {}
+    properties:
+      items: ['0', '1', '2', '3', '4']
     type: DropDown
   - layout_properties: {grid_position: 'AGAYSK,AKPCNQ'}
     name: submit_preferences_entry
@@ -49,10 +51,11 @@ components:
     name: trade_id_label
     properties: {align: center, bold: true, text: 'Trade ID:'}
     type: Label
-  - layout_properties: {grid_position: 'CLIWHT,YAONNA'}
-    name: active_trades
+  - event_bindings: {}
+    layout_properties: {grid_position: 'CLIWHT,WJIMMS'}
+    name: field_trade_id
     properties: {}
-    type: DropDown
+    type: TextBox
   - layout_properties: {grid_position: 'AGAYSK,XIBBNZ'}
     name: exit_trade
     properties: {align: center, text: Exit}

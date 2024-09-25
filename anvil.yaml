@@ -2,38 +2,38 @@ allow_embedding: false
 correct_dependency_ids: {}
 db_schema:
   users:
-    client: none
+    client: search
     columns:
-    - admin_ui: {order: 0, width: 200}
+    - admin_ui: {width: 200}
       name: email
       type: string
-    - admin_ui: {order: 1, width: 200}
-      name: enabled
-      type: bool
-    - admin_ui: {order: 2, width: 200}
-      name: last_login
-      type: datetime
-    - admin_ui: {order: 3, width: 200}
-      name: password_hash
-      type: string
-    - admin_ui: {order: 4, width: 200}
-      name: n_password_failures
-      type: number
-    - admin_ui: {order: 5, width: 200}
-      name: confirmed_email
-      type: bool
-    - admin_ui: {order: 6, width: 200}
-      name: signed_up
-      type: datetime
-    - admin_ui: {order: 0.5, width: 200}
+    - admin_ui: {width: 200}
       name: name
       type: string
-    - admin_ui: {order: 8, width: 200}
-      name: remembered_logins
-      type: simpleObject
-    - admin_ui: {order: 0.75, width: 200}
+    - admin_ui: {width: 200}
       name: privilege
       type: string
+    - admin_ui: {width: 200}
+      name: enabled
+      type: bool
+    - admin_ui: {width: 200}
+      name: last_login
+      type: datetime
+    - admin_ui: {width: 200}
+      name: password_hash
+      type: string
+    - admin_ui: {width: 200}
+      name: n_password_failures
+      type: number
+    - admin_ui: {width: 200}
+      name: confirmed_email
+      type: bool
+    - admin_ui: {width: 200}
+      name: signed_up
+      type: datetime
+    - admin_ui: {width: 200}
+      name: remembered_logins
+      type: simpleObject
     server: full
     title: Users
 dependencies: []
@@ -57,6 +57,6 @@ services:
 - client_config: {allow_remember_me: false, allow_signup: true, confirm_email: false, enable_automatically: true, remember_me_days: 7, use_email: true}
   server_config: {user_table: users}
   source: /runtime/services/anvil/users.yml
-startup: {module: StockScreener, type: form}
+startup: {module: HomePage, type: form}
 startup_form: null
 uplink_visible: true

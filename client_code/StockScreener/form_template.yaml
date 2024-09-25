@@ -95,8 +95,8 @@ components:
       properties:
         columns:
         - {data_key: stock_name, id: JKSDUP, title: STOCK NAME}
-        - {data_key: buy_price, id: VJQQOR, title: Recommended Buy}
-        - {data_key: sell_price, id: OJLQEN, title: Recommended Sell}
+        - {data_key: buy_price, expand: false, id: VJQQOR, title: Recommended Buy, width: 216.89996337890625}
+        - {data_key: sell_price, expand: false, id: OJLQEN, title: Recommended Sell, width: 91.09991455078125}
         - {data_key: show_buttons, id: DRBNES, title: Show}
       type: DataGrid
     layout_properties: {full_width_row: true, grid_position: 'IYGRKM,RVASSN'}

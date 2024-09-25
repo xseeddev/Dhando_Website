@@ -8,7 +8,7 @@ components:
         type: Image
       - layout_properties: {grid_position: 'FNHMHF,TXXRXL'}
         name: welcome_text
-        properties: {align: center, content: 'Welcome {user_name}', font_size: 19}
+        properties: {align: center, content: '', font_size: 19}
         type: RichText
       layout_properties: {grid_position: 'DOBLVR,ZJTKKE'}
       name: user_details

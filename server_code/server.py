@@ -10,5 +10,7 @@ import anvil.plotly_templates
 
 # TODOs:
 '''
+  - Fix "Show" button related problems
+  - Fix logo hyperlink
   - Fix the reload problem.
 '''

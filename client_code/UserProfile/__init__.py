@@ -15,6 +15,9 @@ class UserProfile(UserProfileTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    user = anvil.users.get_user()
+    profile_title = RichText(content=f"Welcome {user['email']}")
+    self.welcome_text.add_component(profile_title)
 
   def favourites_button_click(self, **event_args):
     """This method is called when the button is clicked"""
