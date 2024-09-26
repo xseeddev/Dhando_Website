@@ -1,3 +1,9 @@
+'''
+  Todo:
+    - FIX: reload issue
+    - 
+'''
+
 from ._anvil_designer import HomePageTemplate
 from anvil import *
 import anvil.users
@@ -12,6 +18,7 @@ from ..ToolsPage import ToolsPage
 from ..StockScreener import StockScreener
 from ..F_and_O import F_and_O
 from ..UserProfile import UserProfile
+
 
 class HomePage(HomePageTemplate):
   def __init__(self, **properties):

@@ -10,8 +10,6 @@ import anvil.plotly_templates
 
 # TODOs:
 '''
-  - Include a button to favorite stock and update database
-  - Fix "Show" button related problems
-  - Fix logo hyperlink
-  - Fix the reload problem.
+  - Alerts and loggingivi
+  - Privileges
 '''

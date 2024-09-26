@@ -1,3 +1,8 @@
+'''
+  Todo:
+    - Implement Submit, Exit and Clear button
+'''
+
 from ._anvil_designer import preferencesTemplate
 from anvil import *
 import anvil.server

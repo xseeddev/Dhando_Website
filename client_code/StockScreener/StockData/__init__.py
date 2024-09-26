@@ -1,3 +1,8 @@
+'''
+  Todo:
+    - Put a "mark favorites" button
+'''
+
 from ._anvil_designer import StockDataTemplate
 from anvil import *
 import anvil.server

@@ -1,3 +1,9 @@
+'''
+  Todo:
+    - Add a remove button
+    - Pass the user_name in the anvil server call
+'''
+
 from ._anvil_designer import favouritesTemplate
 from anvil import *
 import anvil.server

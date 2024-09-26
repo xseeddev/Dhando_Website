@@ -1,7 +1,8 @@
 '''
   TODO:
-    - Privileges
-    - Alerts
+    - Login:
+      - Privileges
+    - Company title hyperlink
     - Image
 '''
 
