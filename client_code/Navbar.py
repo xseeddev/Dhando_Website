@@ -30,6 +30,7 @@ class Navbar(NavbarTemplate):
     if user:
       self.login.visible = False
       self.logout.visible = True
+      anvil.server.call('register_user', 0, user["name"], user["email"])
       self.logout_title.text = f"Logged in as {user['email']}"
       self.homepage.set_user(user)
       
