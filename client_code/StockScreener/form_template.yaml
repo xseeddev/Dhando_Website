@@ -2,7 +2,7 @@ components:
 - components:
   - layout_properties: {grid_position: 'GGBOVR,PBQZHB'}
     name: title_text
-    properties: {align: center, bold: true, font_size: 30, text: WELCOME TO THE STOCK SCREENER!}
+    properties: {align: center, bold: true, font_size: 30, text: WELCOME TO THE STOCK SCREENER!, underline: true}
     type: Label
   layout_properties: {full_width_row: true, grid_position: 'BGSBLL,BNNFHQ'}
   name: stockscreener_page_title
@@ -11,7 +11,7 @@ components:
 - components:
   - layout_properties: {grid_position: 'AVNXAT,DROZSG'}
     name: recommendation_title
-    properties: {font_size: 26, text: Stock of the day}
+    properties: {bold: true, font_size: 26, text: Stock of the day, underline: true}
     type: Label
   - components:
     - data_bindings:
@@ -28,9 +28,9 @@ components:
       name: field_buy_price
       properties: {content: ''}
       type: RichText
-    - event_bindings: {click: show_stock_click}
+    - event_bindings: {click: show_recommended_stock_click}
       layout_properties: {grid_position: 'AFENZU,LTQPJS'}
-      name: show_stock
+      name: show_recommended_stock
       properties: {text: Show}
       type: Button
     - layout_properties: {grid_position: 'AFENZU,YJRNHJ QIBSAY,MWSWES'}
@@ -50,12 +50,12 @@ components:
     - event_bindings: {click: predefined_scans_button_click}
       layout_properties: {grid_position: 'NPDUOI,NLOIFC'}
       name: predefined_scans_button
-      properties: {text: scans}
+      properties: {text: scans, underline: true}
       type: Button
     - event_bindings: {click: custom_scan_button_click}
       layout_properties: {grid_position: 'NPDUOI,VFNFBS'}
       name: custom_scan_button
-      properties: {enabled: true, text: custom}
+      properties: {enabled: true, text: custom, underline: true}
       type: Button
     layout_properties: {grid_position: 'JWMAKW,XXAHVS'}
     name: scan_togglebar
@@ -64,12 +64,12 @@ components:
   - components:
     - layout_properties: {grid_position: 'KHAFIN,YVHAXK'}
       name: predefined_scanner_text
-      properties: {text: Pre--defined Scanners}
+      properties: {text: Pre--defined Scanners, underline: true}
       type: Label
-    - event_bindings: {change: pitrosk_change}
+    - event_bindings: {change: piotroski_change}
       layout_properties: {grid_position: 'ALGEZJ,UYODBC'}
-      name: pitrosk
-      properties: {text: Pitrosk Scan}
+      name: piotroski
+      properties: {text: Piotroski Scan}
       type: CheckBox
     - event_bindings: {change: darvas_change}
       layout_properties: {grid_position: 'XGTFVY,KHEWTT'}
@@ -82,31 +82,31 @@ components:
       properties: {text: Stevenson Scan}
       type: CheckBox
     - event_bindings: {click: predefined_display_button_click}
-      layout_properties: {grid_position: 'TPITCU,SDZALL'}
+      layout_properties: {grid_position: ''}
       name: predefined_display_button
-      properties: {text: display}
+      properties: {text: display, underline: true}
       type: Button
     - components:
-      - name: predefined_display_stocks_rows
+      - name: predefined_search_results_panel
         properties: {item_template: StockScreener.RowTemplate1}
         type: RepeatingPanel
-      layout_properties: {grid_position: 'XAVTBQ,DIAHGO'}
-      name: predefined_results
+      layout_properties: {grid_position: 'TPITCU,SDZALL TYDKCS,KQQORT'}
+      name: predefined_search_results
       properties:
         columns:
-        - {data_key: stock_name, id: JKSDUP, title: STOCK NAME}
-        - {data_key: buy_price, expand: false, id: VJQQOR, title: Recommended Buy, width: 216.89996337890625}
-        - {data_key: sell_price, expand: false, id: OJLQEN, title: Recommended Sell, width: 91.09991455078125}
-        - {data_key: show_buttons, id: DRBNES, title: Show}
+        - {data_key: stock_name, id: JKSDUP, title: Stock}
+        - {data_key: buy_price, id: VJQQOR, title: Suggested Buy Price}
+        - {data_key: sell_price, id: OJLQEN, title: Suggested Sell Price}
+        - {data_key: column_1, id: TBTFXB, title: ''}
       type: DataGrid
-    layout_properties: {full_width_row: true, grid_position: 'IYGRKM,RVASSN'}
+    layout_properties: {grid_position: 'CDIPPO,ILYBOM'}
     name: predefined_scans_body
     properties: {role: null}
     type: ColumnPanel
   - components:
     - layout_properties: {grid_position: 'AHGCLD,SVQXPU'}
       name: custom_scans_text
-      properties: {text: Custom Scanners}
+      properties: {text: Custom Scanners, underline: true}
       type: Label
     - layout_properties: {grid_position: 'JGRNYX,ZGCVWF'}
       name: label_marketcap
@@ -158,22 +158,22 @@ components:
       properties: {}
       type: TextBox
     - event_bindings: {click: custom_display_button_click}
-      layout_properties: {grid_position: 'IQAJSN,LHYBLX'}
+      layout_properties: {grid_position: 'PEYTSL,BBIKBY'}
       name: custom_display_button
-      properties: {text: Display}
+      properties: {text: Display, underline: true}
       type: Button
     - components:
-      - name: custom_display_stocks_rows
+      - name: custom_search_results_panel
         properties: {item_template: StockScreener.RowTemplate1}
         type: RepeatingPanel
-      layout_properties: {grid_position: 'HZGADN,QNJVQE'}
-      name: custom_results
+      layout_properties: {grid_position: 'PSZPPA,YAFIAA'}
+      name: custom_search_results
       properties:
         columns:
-        - {data_key: stock_name, id: JKSDUP, title: STOCK NAME}
-        - {data_key: buy_price, id: VJQQOR, title: Recommended Buy}
-        - {data_key: sell_price, id: OJLQEN, title: Recommended Sell}
-        - {data_key: show_buttons, id: BIBRYX, title: Show}
+        - {data_key: stock_name, id: JKSDUP, title: Stock}
+        - {data_key: buy_price, id: VJQQOR, title: Suggested Buy Price}
+        - {data_key: sell_price, id: OJLQEN, title: Suggested Sell Price}
+        - {data_key: column_1, id: TBTFXB, title: ''}
       type: DataGrid
     layout_properties: {full_width_row: true, grid_position: 'WDCRWB,SFMNAH'}
     name: custom_scans_body

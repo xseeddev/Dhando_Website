@@ -3,7 +3,6 @@
     - Login:
       - Privileges
     - Company title hyperlink
-    - Image
 '''
 
 from ._anvil_designer import NavbarTemplate

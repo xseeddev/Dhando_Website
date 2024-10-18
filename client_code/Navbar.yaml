@@ -3,7 +3,7 @@ components:
   - components:
     - layout_properties: {full_width_row: false, grid_position: 'XGVREV,UTWKHD'}
       name: title_logo
-      properties: {display_mode: shrink_to_fit, height: 75.13331604003906}
+      properties: {display_mode: shrink_to_fit, height: 75.13331604003906, source: _/theme/channels4_profile.jpg}
       type: Image
     - event_bindings: {click: title_button_click}
       layout_properties: {grid_position: 'XGVREV,SNZQAB'}
@@ -18,7 +18,7 @@ components:
     - event_bindings: {click: tools_page_button_click}
       layout_properties: {grid_position: 'RRNGRB,SDAYZL'}
       name: tools_page_button
-      properties: {text: tools}
+      properties: {text: tools, underline: true}
       type: Button
     layout_properties: {grid_position: 'SVKTTL,IVVAZI'}
     name: pages_button
