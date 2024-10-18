@@ -1,5 +1,6 @@
 unique_ids:
   assets:
+    channels4_profile.jpg: '1729222562818801121702074.8153'
     standard-page.html: MD5G2GHFAVWRJ5VSBZKNN45Q6NRNQBBD
     stockDetailsOverlay.css: '1724047879023746350256495.9939'
     theme.css: YHRPJKIIYKWDQZUBLCIQ7MIUZQUXJWBB
@@ -23,7 +24,7 @@ unique_ids:
     ToolsPage: '17271084405728903339671.223476'
     UserProfile: '1727198918327124502497096.34042'
     UserProfile.favourites: '1727275699362398790360698.33765'
-    UserProfile.favourites.RowTemplate8: '1727276225048931727856.1220554'
+    UserProfile.favourites.favourite_stock_row: '1727276225048931727856.1220554'
   modules: {}
   scripts: {}
   server_modules:

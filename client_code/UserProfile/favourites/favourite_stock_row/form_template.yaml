@@ -1,0 +1,12 @@
+components:
+- event_bindings: {click: delete_button_click}
+  layout_properties: {column: KITMGE}
+  name: delete_button
+  properties:
+    icon: fa:trash-o
+    role: outlined
+    text: |
+      delete
+  type: Button
+container: {type: DataRowPanel}
+is_package: true

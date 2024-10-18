@@ -1,9 +1,3 @@
-'''
-  Todo:
-    - Add a remove button
-    - Pass the user_name in the anvil server call
-'''
-
 from ._anvil_designer import favouritesTemplate
 from anvil import *
 import anvil.server
@@ -26,7 +20,8 @@ class favourites(favouritesTemplate):
 
   def populate_favourites(self):
     # Call the server function to get favourites
-    favourites_json = anvil.server.call('get_favourites')
+    user_email = anvil.users.get_user()["email"]
+    favourites_json = anvil.server.call('get_favourites', user_email)
     
     # Parse the JSON string into a Python object
     favourites = json.loads(favourites_json)

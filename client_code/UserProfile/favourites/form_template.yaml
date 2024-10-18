@@ -6,7 +6,7 @@ components:
     type: Label
   - components:
     - name: favourite_stock_grid_rows
-      properties: {item_template: UserProfile.favourites.RowTemplate8}
+      properties: {item_template: UserProfile.favourites.favourite_stock_row}
       type: RepeatingPanel
     layout_properties: {grid_position: 'FEAIQW,GEPEMD'}
     name: stocks_table
@@ -16,6 +16,7 @@ components:
       - {data_key: stock_cmp, expand: true, id: VJQQOR, title: CMP}
       - {data_key: stock_percentage_change, expand: true, id: OJLQEN, title: '% CHANGE'}
       - {data_key: stock_price_difference, expand: true, id: RLUNXG, title: PRICE DIFFERENCE}
+      - {data_key: column_1, id: KITMGE, title: ''}
     type: DataGrid
   layout_properties: {full_width_row: true, grid_position: 'FTFWAJ,ENJXGK'}
   name: body
