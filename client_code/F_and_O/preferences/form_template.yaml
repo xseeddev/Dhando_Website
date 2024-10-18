@@ -56,7 +56,8 @@ components:
     name: field_trade_id
     properties: {}
     type: TextBox
-  - layout_properties: {grid_position: 'AGAYSK,XIBBNZ'}
+  - event_bindings: {click: exit_trade_click}
+    layout_properties: {grid_position: 'AGAYSK,XIBBNZ'}
     name: exit_trade
     properties: {align: center, text: Exit}
     type: Button

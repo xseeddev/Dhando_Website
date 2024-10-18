@@ -14,25 +14,11 @@ class F_and_O(F_and_OTemplate):
   def __init__(self, **properties):
     self.init_components(**properties)
     self.accounts = None
+    self.current_account = None
     self.setup_trades_grid()
     self.load_accounts()
     self.setup_event_handlers()
 
-  def setup_trades_grid(self):
-    self.trades_grid.columns = [c for c in self.trades_grid.columns if c['title'] != 'Column 3']
-
-  def load_accounts(self):
-    self.accounts = anvil.server.call('get_all_accounts')
-    self.accounts_dropdown.items = [account['user_name'] for account in self.accounts]
-
-  def setup_event_handlers(self):
-    self.accounts_dropdown.set_event_handler('change', self.accounts_dropdown_change)
-
-  def update_strategy_preferences(self, preference_type):
-    self.strategy_preferences_section.clear()
-    preference = getattr(preferences(), f"get_{preference_type}")()
-    preference.remove_from_parent()
-    self.strategy_preferences_section.add_component(preference, full_width_row=True)
 
   def trade_entry_click(self, **event_args):
     self.update_strategy_preferences('trade_entry')
@@ -54,13 +40,36 @@ class F_and_O(F_and_OTemplate):
 
   def strategy_3_click(self, **event_args):
     self.update_strategy_visibility(3)
+  
+  def update_strategy_preferences(self, preference_type):
+    self.strategy_preferences_section.clear()
+    preference = getattr(preferences(), f"get_{preference_type}")()
+    preference.remove_from_parent()
+    self.strategy_preferences_section.add_component(preference, full_width_row=True)
+
+
+
+
+  def setup_trades_grid(self):
+    self.trades_grid.columns = [c for c in self.trades_grid.columns if c['title'] != 'Column 3']
+
+  def load_accounts(self):
+    self.accounts = anvil.server.call('get_all_accounts')
+    print(f"Accounts: {self.accounts}")
+    self.accounts_dropdown.items = [account['user_name'] for account in self.accounts]
+
+  def setup_event_handlers(self):
+    self.accounts_dropdown.set_event_handler('change', self.accounts_dropdown_change)
 
   def accounts_dropdown_change(self, **event_args):
     self.trades_title.clear()
     self.log_section.clear()
     
     selected_user = self.accounts_dropdown.selected_value
+    self.current_account = selected_user
+    print(f"Selected user: {selected_user}")
     selected_user_data = next((account for account in self.accounts if account['user_name'] == selected_user), None)
+    print(f"Selected user data: {selected_user_data}")
 
     if selected_user_data:
       self.update_trades_title(selected_user_data)
@@ -70,18 +79,22 @@ class F_and_O(F_and_OTemplate):
       self.clear_user_data()
 
   def update_trades_title(self, user_data):
+    print(f"Updating trades title for: {user_data['user_name']}")
     trade_title = RichText(content=f"### Trades for {user_data['user_name']}")
-    trade_title.data = user_data
     self.trades_title.add_component(trade_title)
 
   def update_trades_grid(self, user_data):
+    print(f"Updating trades grid for: {user_data['user_name']}")
     trades = json.loads(user_data['trades'])
-    self.trades_grid_rows.items = trades
+    active_trades = [trade for trade in trades if trade.get('status') == 'active']
+    self.trades_grid_rows.items = active_trades
 
   def update_logs(self, user_data):
+    print(f"Updating logs for: {user_data['user_name']}")
     logs = json.loads(user_data['logs'])
     logs_text = "Logs:\n" + "\n".join(logs)
     self.log_section.content = logs_text
 
   def clear_user_data(self):
+    print(f"Clearing user data for: {self.current_account}")
     self.log_section.content = ""

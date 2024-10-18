@@ -29,4 +29,11 @@ class preferences(preferencesTemplate):
   
   def get_auto_exit(self):
     return self.auto_exit_preferences
+
+  def exit_trade_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    exit_trade_id = self.field_trade_id.text
+    print("Exiting trade:", exit_trade_id)
+    anvil.server.call('exit_trade', exit_trade_id)
+    print("Trade exited.")
     
