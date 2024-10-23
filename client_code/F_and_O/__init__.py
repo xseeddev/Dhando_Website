@@ -56,7 +56,7 @@ class F_and_O(F_and_OTemplate):
   def load_accounts(self):
     self.accounts = anvil.server.call('get_all_accounts')
     print(f"Accounts: {self.accounts}")
-    self.accounts_dropdown.items = [account['user_name'] for account in self.accounts]
+    self.accounts_dropdown.items = [account['username'] for account in self.accounts]
 
   def setup_event_handlers(self):
     self.accounts_dropdown.set_event_handler('change', self.accounts_dropdown_change)
@@ -68,7 +68,7 @@ class F_and_O(F_and_OTemplate):
     selected_user = self.accounts_dropdown.selected_value
     self.current_account = selected_user
     print(f"Selected user: {selected_user}")
-    selected_user_data = next((account for account in self.accounts if account['user_name'] == selected_user), None)
+    selected_user_data = next((account for account in self.accounts if account['username'] == selected_user), None)
     print(f"Selected user data: {selected_user_data}")
 
     if selected_user_data:
@@ -79,20 +79,32 @@ class F_and_O(F_and_OTemplate):
       self.clear_user_data()
 
   def update_trades_title(self, user_data):
-    print(f"Updating trades title for: {user_data['user_name']}")
-    trade_title = RichText(content=f"### Trades for {user_data['user_name']}")
+    print(f"Updating trades title for: {user_data['username']}")
+    trade_title = RichText(content=f"### Trades for {user_data['username']}")
     self.trades_title.add_component(trade_title)
 
   def update_trades_grid(self, user_data):
-    print(f"Updating trades grid for: {user_data['user_name']}")
-    trades = json.loads(user_data['trades'])
-    active_trades = [trade for trade in trades if trade.get('status') == 'active']
+    print("Getting trades for:", user_data["email"])    
+    # Call the server function to get trades
+    trades = anvil.server.call('get_trades', user_data["email"])
+    
+    # Filter for active trades
+    active_trades = [trade for trade in trades]
+    
+    # Update the grid
     self.trades_grid_rows.items = active_trades
 
+
   def update_logs(self, user_data):
-    print(f"Updating logs for: {user_data['user_name']}")
-    logs = json.loads(user_data['logs'])
+    print(f"Updating logs for user email: {user_data['email']}")
+    
+    # Call the server function to get logs
+    logs = anvil.server.call('get_user_logs', user_data["email"])
+    
+    # Format the logs
     logs_text = "Logs:\n" + "\n".join(logs)
+    
+    # Update the log section
     self.log_section.content = logs_text
 
   def clear_user_data(self):

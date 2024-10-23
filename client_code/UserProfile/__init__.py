@@ -35,11 +35,11 @@ class UserProfile(UserProfileTemplate):
         'email': self.user["email"],
         'api_key': self.api_key_field.text,
         'api_secret': self.api_secret_field.text,
-        'login_pin': self.login_pin_field.date,
+        'login_pin': self.login_pin_field.text,
     }
     
     # Validate inputs (you may want to add more comprehensive validation)
-    if not properties['full_name'] or not properties['email'] or not properties['password']:
+    if not properties['full_name']:
         anvil.alert("Please fill in all required fields.")
         return
     

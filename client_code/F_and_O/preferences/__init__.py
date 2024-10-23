@@ -14,6 +14,7 @@ class preferences(preferencesTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     # Any code you write here will run before the form opens.
+    self.user = anvil.users.get_user()
 
   def get_trade_entry(self):
     self.load_accounts()
@@ -24,14 +25,12 @@ class preferences(preferencesTemplate):
     return self.trade_exit_preferences
   
   def get_auto_exit(self):
-    self.load_accounts_autoexit()
-    self.setup_event_handlers_autoexit()
     return self.auto_exit_preferences
 
   def load_accounts(self):
     self.accounts = anvil.server.call('get_all_accounts')
     print(f"Accounts: {self.accounts}")
-    self.accounts_dropdown.items = [account['user_name'] for account in self.accounts]
+    self.accounts_dropdown.items = [account['username'] for account in self.accounts]
     
   def setup_event_handlers(self):
     self.accounts_dropdown.set_event_handler('change', self.accounts_dropdown_change)
@@ -44,7 +43,7 @@ class preferences(preferencesTemplate):
   def submit_preferences_entry_click(self, **event_args):
     """This method is called when the button is clicked"""
     properties = {
-      "account_user": self.accounts_dropdown.selected_value,
+      "full_name": self.accounts_dropdown.selected_value,
       "buy_strike": self.buy_strike_field.text,
       "sell_strike": self.sell_strike_field.text,
       "option_type": self.option_type_dropdown.selected_value,
@@ -59,15 +58,7 @@ class preferences(preferencesTemplate):
     print("Exiting trade:", exit_trade_id)
     anvil.server.call('exit_trade', exit_trade_id)
     print("Trade exited.")
-
-  def load_accounts_autoexit(self):
-    self.accounts = anvil.server.call('get_all_accounts')
-    print(f"Accounts: {self.accounts}")
-    self.accounts_dropdown_autoexit.items = [account['user_name'] for account in self.accounts]
     
-  def setup_event_handlers_autoexit(self):
-    self.accounts_dropdown_autoexit.set_event_handler('change', self.accounts_dropdown_change_autoexit)
-
   def accounts_dropdown_change_autoexit(self, **event_args):
     selected_user = self.accounts_dropdown_autoexit.selected_value
     self.current_account = selected_user
@@ -76,7 +67,7 @@ class preferences(preferencesTemplate):
   def submit_preferences_autoexit_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     properties = {
-      "account_user": self.accounts_dropdown_autoexit.selected_value,
+      "id": self.field_trade_id_auto.text,
       "nifty_target": self.nifty_target_field.text,
       "nifty_stoploss": self.nifty_stoploss_field.text,
       "pnl_target": self.target_field.text,
@@ -84,4 +75,8 @@ class preferences(preferencesTemplate):
     }
     print("autoexit properties:", properties)
     anvil.server.call('autoexit_submit', properties)
+
+  def clear_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    anvil.server.call('delete_exited')
     
