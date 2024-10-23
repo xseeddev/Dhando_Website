@@ -31,6 +31,7 @@ class UserProfile(UserProfileTemplate):
   def submit_details_click(self, **event_args):
     """This method is called when the button is clicked"""
     properties = {
+        'user_id': self.user_id_field.text,
         'full_name': self.full_name_field.text,
         'email': self.user["email"],
         'api_key': self.api_key_field.text,

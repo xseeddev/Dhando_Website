@@ -18,6 +18,14 @@ components:
         name: label_1
         properties: {align: center, bold: true, font_size: 20, text: Update Details, underline: true}
         type: Label
+      - layout_properties: {grid_position: 'YTEWBN,AEQNIA'}
+        name: user_id_text
+        properties: {text: 'User ID:'}
+        type: Label
+      - layout_properties: {grid_position: 'YTEWBN,TOXVCU'}
+        name: user_id_field
+        properties: {}
+        type: TextBox
       - layout_properties: {grid_position: 'ZXRAET,FWDEFO YDHKPR,CUVAJA'}
         name: full_name_text
         properties: {text: Full Name}
