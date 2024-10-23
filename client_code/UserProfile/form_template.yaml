@@ -14,10 +14,63 @@ components:
         name: spacer_1
         properties: {height: 60}
         type: Spacer
+      - layout_properties: {grid_position: 'TTTUCA,ICWVOS'}
+        name: label_1
+        properties: {align: center, bold: true, font_size: 20, text: Update Details, underline: true}
+        type: Label
+      - layout_properties: {grid_position: 'ZXRAET,FWDEFO YDHKPR,CUVAJA'}
+        name: full_name_text
+        properties: {text: Full Name}
+        type: Label
+      - layout_properties: {grid_position: 'ZXRAET,FWDEFO QGSXLM,GDPUJM'}
+        name: email_text
+        properties: {text: Email}
+        type: Label
+      - layout_properties: {grid_position: 'ZXRAET,FWDEFO UXUTZL,AWAHQJ'}
+        name: api_key_text
+        properties: {text: API Key}
+        type: Label
+      - layout_properties: {grid_position: 'ZXRAET,FWDEFO ISAKSA,VYRFCW'}
+        name: api_secret_text
+        properties: {text: API Secret}
+        type: Label
+      - layout_properties: {grid_position: 'ZXRAET,FWDEFO QIPICF,UMMBHM'}
+        name: login_pin_text
+        properties: {text: Login Pin}
+        type: Label
+      - layout_properties: {grid_position: 'ZXRAET,VJPMAC FHNRGT,KRUEDJ'}
+        name: full_name_field
+        properties: {}
+        type: TextBox
+      - layout_properties: {grid_position: 'ZXRAET,VJPMAC RHNPNJ,KJIAIL'}
+        name: email_field
+        properties: {}
+        type: Label
+      - layout_properties: {grid_position: 'ZXRAET,VJPMAC ZDHVSS,AHDETQ'}
+        name: api_key_field
+        properties: {}
+        type: TextBox
+      - layout_properties: {grid_position: 'ZXRAET,VJPMAC DQSVWI,GUCWVE'}
+        name: api_secret_field
+        properties: {}
+        type: TextBox
+      - layout_properties: {grid_position: 'ZXRAET,VJPMAC ZVRFZG,ZSWHQF'}
+        name: login_pin_field
+        properties: {}
+        type: TextBox
+      - event_bindings: {click: submit_details_click}
+        layout_properties: {grid_position: 'GLCYPZ,NIDSGB'}
+        name: submit_details
+        properties: {text: Submit}
+        type: Button
       layout_properties: {grid_position: 'DOBLVR,ZJTKKE'}
       name: user_details
       properties: {role: null}
       type: ColumnPanel
+    - layout_properties: {grid_position: 'BDPYTE,VZKHZR'}
+      name: spacer_2
+      properties: {height: 54.39996337890625}
+      type: Spacer
     - event_bindings: {click: favourites_button_click}
       layout_properties: {grid_position: 'XQTDWE,PHIYZE'}
       name: favourites_button
