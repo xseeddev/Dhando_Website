@@ -7,7 +7,7 @@ components:
   - event_bindings: {change: accounts_dropdown_change}
     layout_properties: {grid_position: 'GZOGZP,HFQDGS'}
     name: accounts_dropdown
-    properties: {include_placeholder: true, placeholder: All}
+    properties: {include_placeholder: false, placeholder: All}
     type: DropDown
   - layout_properties: {grid_position: 'JRDNES,NTNRJD'}
     name: buy_strike_title

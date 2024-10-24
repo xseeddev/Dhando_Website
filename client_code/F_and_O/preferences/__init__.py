@@ -57,10 +57,10 @@ class preferences(preferencesTemplate):
   def exit_trade_click(self, **event_args):
     """This method is called when the button is clicked"""
     properties = {
-      "trade_id": self.field_trade_id.text,
+      "id": self.field_trade_id.text,
       "partial_exit_percentage": self.partial_exit_field.text,
     }
-    response = anvil.server.call('autoexit_submit', properties)
+    response = anvil.server.call('exit_trade', properties)
     anvil.alert(f"From server ({response['status']}): {response['message']}")
 
   def accounts_dropdown_change_autoexit(self, **event_args):
@@ -81,5 +81,7 @@ class preferences(preferencesTemplate):
 
   def clear_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.server.call('delete_exited')
+    response = anvil.server.call('delete_exited')
+    anvil.alert(f"From server ({response['status']}): {response['message']}")    
+
     
