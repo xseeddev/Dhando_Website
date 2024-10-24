@@ -1,7 +1,6 @@
 '''
   Todo:
     - FIX: reload issue
-    - 
 '''
 
 from ._anvil_designer import HomePageTemplate
