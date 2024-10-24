@@ -37,19 +37,13 @@ class UserProfile(UserProfileTemplate):
         'api_key': self.api_key_field.text,
         'api_secret': self.api_secret_field.text,
         'login_pin': self.login_pin_field.text,
+        "margin_buffer": self.margin_buffer_field.text,
     }
     
-    # Validate inputs (you may want to add more comprehensive validation)
-    if not properties['full_name']:
-        anvil.alert("Please fill in all required fields.")
-        return
+    response = anvil.server.call('register_user', properties)
     
-    # Call the server function to register the user
-    success = anvil.server.call('register_user', properties)
-    
-    if success:
-        anvil.alert("User registered successfully!")
-        # You might want to navigate to a different form or clear the inputs here
+    if response["status"]:
+        anvil.alert(f"From server: {response['message']}, User registered/updated successfully!")
     else:
-        anvil.alert("Registration failed. Please try again.")
+        anvil.alert(f"From server: {response['message']}, Registration/update failed. Please try again.")
     

@@ -24,7 +24,7 @@ components:
         type: Label
       - layout_properties: {grid_position: 'YTEWBN,TOXVCU'}
         name: user_id_field
-        properties: {}
+        properties: {placeholder: None}
         type: TextBox
       - layout_properties: {grid_position: 'ZXRAET,FWDEFO YDHKPR,CUVAJA'}
         name: full_name_text
@@ -46,9 +46,13 @@ components:
         name: login_pin_text
         properties: {text: Login Pin}
         type: Label
+      - layout_properties: {grid_position: 'ZXRAET,FWDEFO LIKNWP,UAKJCD'}
+        name: margin_buffer_text
+        properties: {text: Margin Buffer}
+        type: Label
       - layout_properties: {grid_position: 'ZXRAET,VJPMAC FHNRGT,KRUEDJ'}
         name: full_name_field
-        properties: {}
+        properties: {placeholder: None}
         type: TextBox
       - layout_properties: {grid_position: 'ZXRAET,VJPMAC RHNPNJ,KJIAIL'}
         name: email_field
@@ -56,15 +60,19 @@ components:
         type: Label
       - layout_properties: {grid_position: 'ZXRAET,VJPMAC ZDHVSS,AHDETQ'}
         name: api_key_field
-        properties: {}
+        properties: {placeholder: None}
         type: TextBox
       - layout_properties: {grid_position: 'ZXRAET,VJPMAC DQSVWI,GUCWVE'}
         name: api_secret_field
-        properties: {}
+        properties: {placeholder: None}
         type: TextBox
       - layout_properties: {grid_position: 'ZXRAET,VJPMAC ZVRFZG,ZSWHQF'}
         name: login_pin_field
-        properties: {}
+        properties: {placeholder: None}
+        type: TextBox
+      - layout_properties: {grid_position: 'ZXRAET,VJPMAC LMGUQM,XPSYHZ'}
+        name: margin_buffer_field
+        properties: {placeholder: None}
         type: TextBox
       - event_bindings: {click: submit_details_click}
         layout_properties: {grid_position: 'GLCYPZ,NIDSGB'}

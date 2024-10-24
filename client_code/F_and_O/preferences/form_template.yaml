@@ -7,7 +7,7 @@ components:
   - event_bindings: {change: accounts_dropdown_change}
     layout_properties: {grid_position: 'GZOGZP,HFQDGS'}
     name: accounts_dropdown
-    properties: {}
+    properties: {include_placeholder: true, placeholder: All}
     type: DropDown
   - layout_properties: {grid_position: 'JRDNES,NTNRJD'}
     name: buy_strike_title
@@ -34,15 +34,23 @@ components:
     properties:
       items: [CE, PE]
     type: DropDown
-  - layout_properties: {grid_position: 'CTKSZD,HGYVSN'}
+  - layout_properties: {grid_position: 'CTKSZD,HGYVSN BWYEGL,CEVJXK'}
     name: expiry_title
     properties: {align: center, bold: true, text: Expiry Preference}
     type: Label
-  - layout_properties: {grid_position: 'CTKSZD,FRGTIM'}
+  - layout_properties: {grid_position: 'CTKSZD,HGYVSN ABFKKD,ARPCLR'}
+    name: margin_allocation_text
+    properties: {align: center, bold: true, text: Margin Allocation (%)}
+    type: Label
+  - layout_properties: {grid_position: 'CTKSZD,FRGTIM NTLPJQ,ERQYKW'}
     name: expiry_field
     properties:
       items: ['0', '1', '2', '3', '4']
     type: DropDown
+  - layout_properties: {grid_position: 'CTKSZD,FRGTIM AVTHKK,QMQBCN'}
+    name: margin_allocation_field
+    properties: {}
+    type: TextBox
   - event_bindings: {click: submit_preferences_entry_click}
     layout_properties: {grid_position: 'AGAYSK,AKPCNQ'}
     name: submit_preferences_entry
@@ -53,13 +61,21 @@ components:
   properties: {role: null}
   type: ColumnPanel
 - components:
-  - layout_properties: {grid_position: 'CLIWHT,YJOFWT'}
+  - layout_properties: {grid_position: 'CLIWHT,YJOFWT MRGRPC,EEWNMJ'}
     name: trade_id_label
     properties: {align: center, bold: true, text: 'Trade ID:'}
     type: Label
+  - layout_properties: {grid_position: 'CLIWHT,YJOFWT XTDQQI,SLADQL'}
+    name: partial_exit_text
+    properties: {align: center, bold: true, text: Partial exit (%)}
+    type: Label
   - event_bindings: {}
-    layout_properties: {grid_position: 'CLIWHT,WJIMMS'}
+    layout_properties: {grid_position: 'CLIWHT,WJIMMS JLNCAX,HNRRNC'}
     name: field_trade_id
+    properties: {}
+    type: TextBox
+  - layout_properties: {grid_position: 'CLIWHT,WJIMMS HGEKKW,ZZCHTI'}
+    name: partial_exit_field
     properties: {}
     type: TextBox
   - event_bindings: {click: exit_trade_click}
@@ -102,20 +118,12 @@ components:
     name: nifty_stoploss_field
     properties: {}
     type: TextBox
-  - layout_properties: {grid_position: 'BWNWFA,BGEOCT'}
-    name: target_label
-    properties: {align: center, bold: true, text: ProfitNLoss Target}
+  - layout_properties: {grid_position: 'QGUEQV,YHPNBL'}
+    name: partial_autoexit_text
+    properties: {align: center, bold: true, text: Partial exit (%)}
     type: Label
-  - layout_properties: {grid_position: 'BWNWFA,NMSOPJ'}
-    name: target_field
-    properties: {}
-    type: TextBox
-  - layout_properties: {grid_position: 'CLIWHT,YJOFWT'}
-    name: spotloss_label
-    properties: {align: center, bold: true, text: ProfitNLoss SpotLoss}
-    type: Label
-  - layout_properties: {grid_position: 'CLIWHT,SCYFQI'}
-    name: spotloss_field
+  - layout_properties: {grid_position: 'QGUEQV,XPSMXX'}
+    name: partial_autoexit_field
     properties: {}
     type: TextBox
   - event_bindings: {click: submit_preferences_autoexit_button_click}

@@ -30,8 +30,8 @@ class preferences(preferencesTemplate):
   def load_accounts(self):
     self.accounts = anvil.server.call('get_all_accounts')
     print(f"Accounts: {self.accounts}")
-    self.accounts_dropdown.items = [account['username'] for account in self.accounts]
-    
+    self.accounts_dropdown.items = ["All"] + [account['username'] for account in self.accounts]    
+  
   def setup_event_handlers(self):
     self.accounts_dropdown.set_event_handler('change', self.accounts_dropdown_change)
   
@@ -47,18 +47,22 @@ class preferences(preferencesTemplate):
       "buy_strike": self.buy_strike_field.text,
       "sell_strike": self.sell_strike_field.text,
       "option_type": self.option_type_dropdown.selected_value,
-      "expiry_preference": self.expiry_field.selected_value
+      "expiry_preference": self.expiry_field.selected_value,
+      "margin_allocation": self.margin_allocation_field.text,
     }
-    print("Trade entry properties:", properties)
-    anvil.server.call('trade_entry_submit', properties)
+    response = anvil.server.call('trade_entry_submit', properties)
+    anvil.alert(f"From server ({response['status']}): {response['message']}")
+
     
   def exit_trade_click(self, **event_args):
     """This method is called when the button is clicked"""
-    exit_trade_id = self.field_trade_id.text
-    print("Exiting trade:", exit_trade_id)
-    anvil.server.call('exit_trade', exit_trade_id)
-    print("Trade exited.")
-    
+    properties = {
+      "trade_id": self.field_trade_id.text,
+      "partial_exit_percentage": self.partial_exit_field.text,
+    }
+    response = anvil.server.call('autoexit_submit', properties)
+    anvil.alert(f"From server ({response['status']}): {response['message']}")
+
   def accounts_dropdown_change_autoexit(self, **event_args):
     selected_user = self.accounts_dropdown_autoexit.selected_value
     self.current_account = selected_user
@@ -70,11 +74,10 @@ class preferences(preferencesTemplate):
       "id": self.field_trade_id_auto.text,
       "nifty_target": self.nifty_target_field.text,
       "nifty_stoploss": self.nifty_stoploss_field.text,
-      "pnl_target": self.target_field.text,
-      "pnl_stoploss": self.nifty_stoploss_field.text
+      "partial_exit_percentage": self.partial_autoexit_field.text,
     }
-    print("autoexit properties:", properties)
-    anvil.server.call('autoexit_submit', properties)
+    response = anvil.server.call('autoexit_submit', properties)
+    anvil.alert(f"From server ({response['status']}): {response['message']}")    
 
   def clear_button_click(self, **event_args):
     """This method is called when the button is clicked"""
