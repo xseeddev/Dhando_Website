@@ -54,10 +54,11 @@ class F_and_O(F_and_OTemplate):
     self.trades_grid.columns = [c for c in self.trades_grid.columns if c['title'] != 'Column 3']
 
   def load_accounts(self):
-    self.accounts = anvil.server.call('get_all_accounts')
+    self.accounts = [{'userid': '000', 'username': 'Admin', 'email': 'admin@admin.com'}] + anvil.server.call('get_all_accounts')
+    
     print(f"Accounts: {self.accounts}")
     self.accounts_dropdown.items = [account['username'] for account in self.accounts]
-
+  
   def setup_event_handlers(self):
     self.accounts_dropdown.set_event_handler('change', self.accounts_dropdown_change)
 
@@ -72,9 +73,14 @@ class F_and_O(F_and_OTemplate):
     print(f"Selected user data: {selected_user_data}")
 
     if selected_user_data:
-      self.update_trades_title(selected_user_data)
-      self.update_trades_grid(selected_user_data)
-      self.update_logs(selected_user_data)
+      if selected_user_data['username'] != 'Admin':
+        self.update_trades_title(selected_user_data)
+        self.update_trades_grid(selected_user_data)
+        self.update_logs(selected_user_data)
+      else:
+        self.update_trades_title(selected_user_data)
+        self.trades_grid.clear()
+        self.update_logs(selected_user_data)
     else:
       self.clear_user_data()
 
