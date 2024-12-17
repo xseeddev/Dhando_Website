@@ -1,3 +1,7 @@
+'''
+- Fix trades_grid on multiple drawdown switch
+'''
+
 from ._anvil_designer import F_and_OTemplate
 from anvil import *
 import anvil.server
